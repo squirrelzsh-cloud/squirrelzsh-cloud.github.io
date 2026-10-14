@@ -1,0 +1,13 @@
+/* Natural daylight: retain the layered scene and its existing scroll timeline. */
+#top .hero-sticky:before{background:linear-gradient(90deg,rgba(24,25,20,.32),rgba(24,25,20,.12) 24%,transparent 43%)}
+#top .desk-focus{display:none}
+#top .desk-object{filter:drop-shadow(1px 2px 1px rgba(38,29,20,.22))}
+#top .story-tablet{filter:drop-shadow(1px 3px 2px rgba(31,26,20,.28))}
+#top .home-identity{text-shadow:0 1px 3px rgba(24,25,20,.3)}
+#top .desk-scene .desk-base{filter:none;will-change:auto}
+#top .desk-scene .desk-object img{filter:saturate(.86)}
+
+/* Supplied rendered scene: unified paper background through the introduction. */
+.design-intro,.intro-stage,.intro-opening,.resume-portal,.resume-preview{background:#f1e7d8;background-image:none}
+#top .desk-scene .desk-object img{filter:none}
+#top .desk-scene .story-tablet img{width:1672px;height:941px;left:0;top:0;clip-path:path("M 595 260 L 1210 260 Q 1243 260 1247 289 L 1287 683 Q 1290 718 1255 723 L 578 722 Q 544 720 545 690 L 563 293 Q 565 261 595 260 Z")}

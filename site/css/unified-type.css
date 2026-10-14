@@ -1,0 +1,7 @@
+:root{--portfolio-font:Arial,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;--font-body:var(--portfolio-font);--font-display:var(--portfolio-font)}
+body,body *{font-family:var(--portfolio-font)!important}
+blur-glyph[data-blur-glyph]{display:inline-block;white-space:pre;line-height:inherit;font-size:inherit;font-weight:inherit;letter-spacing:inherit;color:inherit;text-decoration:inherit}
+@media(prefers-reduced-motion:reduce){blur-glyph[data-blur-glyph]{filter:none!important;opacity:1!important;transform:none!important}}
+/* Blur, opacity and position now come from the same scroll position. */
+[data-ink] span{color:inherit!important}
+blur-glyph[data-blur-glyph]{transition:none!important;animation:none!important}

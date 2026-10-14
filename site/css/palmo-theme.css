@@ -1,0 +1,30 @@
+@font-face{font-family:Portfolio Khand;src:url('../assets/fonts/khand-bold.woff2') format('woff2');font-weight:700 900;font-display:swap}
+:root{--portfolio-font:'Portfolio SC','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;--font-body:var(--portfolio-font);--font-display:var(--portfolio-font);--font-sans:var(--portfolio-font);--portfolio-paper:#f8f8f0;--portfolio-ink:#463721;--portfolio-yellow:#ffe386;--portfolio-gold:#b9902e}
+html body,html body *,html body .studio-opening *,html.studio-active body .nav *{font-family:var(--portfolio-font)!important}
+html body h1,html body h2,html body h3,html body .logo-wordmark,html body #site-loader .loader-signature{font-family:var(--portfolio-font)!important;font-weight:900;letter-spacing:-.045em}
+html body p{font-weight:400}
+html body .logo-wordmark{font-size:25px;letter-spacing:-.045em;line-height:1.2}
+.studio-heading .home-portfolio-label{grid-column:1;grid-row:1;margin:0;font-size:11px;font-weight:600;letter-spacing:.12em;color:#8b7956}
+.studio-heading .home-identity h1{grid-column:1;grid-row:2;align-self:center;font-size:clamp(48px,4.8vw,78px);line-height:1.12;font-weight:900;letter-spacing:-.055em;color:#463721}
+.studio-heading .home-identity h1 span{display:inline-block;font-size:.3em;margin-left:14px;letter-spacing:-.04em;font-weight:600;vertical-align:baseline;color:#786950}
+.studio-heading .home-identity h2{grid-column:1;grid-row:3;align-self:center;font-size:clamp(14px,1.3vw,20px);line-height:1.5;letter-spacing:0;font-weight:600;margin:0}
+.studio-heading .home-identity h2 br{display:none}
+.studio-heading .home-actions a:first-child{background:#ffe386;color:#463721;border-color:#ffe386}
+.studio-heading .home-actions a:hover,.studio-heading .home-actions button:hover{background:#ece2b1;color:#463721;border-color:#b9902e}
+html body .rs-project h3,html body .designer-lead{font-weight:900;letter-spacing:-.05em}
+html body .reference-reader .case-hero h1{font-weight:900;letter-spacing:-.045em}
+html body .reference-reader .reference-tags span{background:#ece2b1;color:#463721}
+html body .reference-reader .case-toc button.active{background:#463721;color:#f8f8f0}
+#site-loader .loader-signature{font-size:clamp(28px,3vw,42px);font-weight:900}
+@media(max-width:800px){
+ .studio-heading .home-identity{grid-template-rows:16px auto 24px auto 42px;gap:8px 12px;align-content:center}
+ .studio-heading .home-portfolio-label{grid-row:1;font-size:9px}
+ .studio-heading .home-role{grid-column:2;grid-row:1;font-size:8px}
+ .studio-heading .home-identity h1{grid-column:1/-1;grid-row:2;font-size:clamp(43px,9vw,64px);line-height:1.16}
+ .studio-heading .home-identity h1 span{font-size:.3em;margin-left:10px}
+ .studio-heading .home-identity h2{grid-column:1/-1;grid-row:3;font-size:13px;line-height:1.5}
+ .studio-heading .home-description{grid-row:4;font-size:11px;line-height:1.6}
+ .studio-heading .home-actions{grid-row:5}
+ html body .logo-wordmark{font-size:22px}
+}
+@media(min-width:801px) and (max-height:740px){.studio-heading .home-identity h1{font-size:clamp(44px,4.3vw,62px)}.studio-heading .home-identity h2{font-size:15px}}

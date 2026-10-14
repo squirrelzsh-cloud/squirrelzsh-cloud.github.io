@@ -1,0 +1,27 @@
+/* Warm paper palette for the introduction and design-to-work sequence. */
+.design-intro,.intro-stage,.intro-opening{background:#f1e7d8;color:#49382b}
+.intro-stage,.intro-opening{background-image:radial-gradient(ellipse at 50% 35%,#f7efE3 0%,#f1e7d8 65%,#eaddc9 100%)}
+.intro-rings i{border-color:#c29a69;border-radius:22%}
+.intro-device{filter:drop-shadow(0 24px 20px #62462d25)}
+.intro-beat a{background:#dfc39d;color:#49382b}.intro-beat a:hover{background:#e9d3b4}
+[data-ink] span{color:var(--ink-color,#49382b)}
+.intro-reading .nav,.intro-reading .nav .logo,.intro-reading .nav .menu-button,.warm-reading .nav,.warm-reading .nav .logo,.warm-reading .nav .menu-button{color:#49382b}
+.object-story,.os-stage{background:#f8f8f0;color:#49382b;--os-accent:#a87542}
+.os-dark{background:radial-gradient(ellipse at 50% 42%,#f8f0e4 0%,#f8f8f0 60%,#e4d1b6 100%)}
+.os-blueprint{background-color:#f8f8f0;background-image:linear-gradient(#896f4e20 1px,transparent 1px),linear-gradient(90deg,#896f4e20 1px,transparent 1px)}
+.os-blueprint:after{border-color:#896f4e38}
+.os-backdrop{background-image:linear-gradient(#f1e7d8bd,#f1e7d8bd),url('../assets/story-desk.webp');filter:saturate(.7)}
+.os-wire{border-color:#94714b;border-radius:4.48vmin}.os-wire:before{border-color:#94714b88;border-radius:5vmin}.os-wire:after{border-color:#94714b66}.os-handle{background:#f7efe3;border-color:#94714b}
+.os-copy small,.os-label,.os-chapter,.os-ai{color:#735638}.os-copy h2,.os-copy p{color:#49382b}
+.os-portrait,.os-media{background:#e7d6bc;border-color:#9c7d5644}.os-portrait small{color:#49382b;background:#f1e7d8df;padding:8px 10px}
+.os-media:after{background:linear-gradient(transparent 15%,#f1e7d8c9 55%,#f1e7d8 100%)}.os-media figcaption{color:#49382b}.os-media button{background:#49382b;color:#f8efdf;border-color:#49382b}.os-media button:focus-visible,.os-skip:focus-visible{outline-color:#a87542}.os-skip{border-color:#94714b66}
+.os-poster-title{color:#49382b}
+.project-reader,.project-reader::backdrop{background:#f1e7d8;color:#49382b}
+
+/* Keep images distinct from the paper-colored stage. */
+.os-media:after{background:linear-gradient(180deg,transparent 16%,#201b1740 42%,#201b17ee 100%)}
+.os-media figcaption,.os-poster-title{color:#fff4e4}.os-media button{background:#f5e7d1;color:#49382b;border-color:#f5e7d1}
+.os-poster-active .os-skip{color:#fff4e4;border-color:#fff4e488}
+@media(prefers-reduced-motion:reduce){.os-tool-fallback{display:none!important}}
+.os-poster-active .os-media:after{background:linear-gradient(180deg,#201b1770 0%,#201b1780 38%,#201b17ef 100%)}
+.warm-reading:has(.os-poster-active) .nav,.warm-reading:has(.os-poster-active) .nav .logo,.warm-reading:has(.os-poster-active) .nav .menu-button{color:#fff4e4}

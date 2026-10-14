@@ -1,0 +1,32 @@
+/* One family, three weights and shared page edges throughout the portfolio. */
+:root{--page-gutter:min(6vw,92px);--page-edge:var(--page-gutter);--portfolio-font:'Portfolio SC','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;--font-body:var(--portfolio-font);--font-display:var(--portfolio-font);--font-sans:var(--portfolio-font);--ink:#463721;--paper:#f8f8f0;--mint:#ffe386;--type-primary:clamp(40px,4.8vw,72px);--type-secondary:clamp(24px,2.5vw,36px);--type-body:16px}
+html body,html body *,html body .studio-opening *,html.studio-active body .nav *,html body nav.nav .logo-wordmark,html body #site-loader .loader-signature{font-family:var(--portfolio-font)!important;font-synthesis:none}
+html body h1{font-size:var(--type-primary);font-weight:900!important;line-height:1.15;letter-spacing:-.04em}
+html body h2{font-size:var(--type-secondary);font-weight:600!important;line-height:1.35;letter-spacing:-.025em}
+html body h3,html body h4,html body strong,html body b,html body label,html body button,html body [role=button],html body nav a{font-weight:600!important}
+html body p,html body li,html body dd,html body figcaption,html body small{font-weight:400!important}
+html body p{font-size:var(--type-body);line-height:1.8}
+html body nav.nav{padding-inline:var(--page-gutter)!important}
+html body nav.nav .logo-wordmark{font-size:26px!important;font-weight:900!important;letter-spacing:-.05em;line-height:1.2}
+html body nav.nav .top-links{margin-right:0}
+html body nav.nav .top-links a{font-size:14px;font-weight:600!important;letter-spacing:0}
+.studio-heading{padding-inline:var(--page-gutter)!important}
+.studio-heading .home-identity h1{font-size:var(--type-primary);font-weight:900!important}
+.studio-heading .home-identity h1 span{font-weight:600!important}
+.studio-heading .home-identity h2{font-size:18px;font-weight:600!important}
+.studio-heading .home-portfolio-label,.studio-heading .home-role{font-size:11px;line-height:1.6;font-weight:600!important}
+.studio-heading .home-description{font-size:15px;line-height:1.8;font-weight:400!important}
+html body .studio-heading .home-actions a,html body .studio-heading .home-actions button{font-family:var(--portfolio-font)!important;font-size:15px;font-weight:600!important;min-height:46px;padding:11px 20px;line-height:22px;border:1.5px solid #46372170;transition:background-color .18s,color .18s,box-shadow .18s}
+html body .studio-heading .home-actions a:first-child{background:#ffe386;border-color:#ffe386;color:#463721;box-shadow:0 2px 0 #b9902e33}
+html body .studio-heading .home-actions button{background:#f8f8f0;color:#463721}
+html body .studio-heading .home-actions a:hover,html body .studio-heading .home-actions button:hover{background:#ece2b1;border-color:#b9902e;box-shadow:0 3px 10px #46372118}
+html body .studio-heading .home-actions a:active,html body .studio-heading .home-actions button:active{background:#e6cf82;box-shadow:inset 0 2px 3px #46372120}
+html body a:focus-visible,html body button:focus-visible{outline:2px solid #b9902e;outline-offset:4px}
+html body #approach.designer-resume,html body .reference-showcase{padding-inline:var(--page-gutter)}
+html body .reference-reader .case-hero h1{font-size:var(--type-secondary);font-weight:900!important}
+html body .reference-reader .case-hero p,html body .reference-reader .reference-notes p{font-size:14px;font-weight:400!important}
+html body .reference-reader .case-main h2{font-size:26px;font-weight:600!important}
+html body .reference-reader .case-main h3{font-size:20px;font-weight:600!important}
+html body .reference-reader .case-toc button{font-weight:600!important}
+html body .rs-project h3{font-weight:600!important}
+@media(max-width:800px){:root{--page-gutter:20px;--type-primary:clamp(40px,9vw,60px);--type-secondary:28px;--type-body:14px}html body nav.nav .logo-wordmark{font-size:24px!important}.studio-heading .home-identity h2{font-size:13px}.studio-heading .home-role{font-size:8px}.studio-heading .home-portfolio-label{font-size:9px}.studio-heading .home-description{font-size:12px}.studio-heading .home-actions{gap:10px}html body .studio-heading .home-actions a,html body .studio-heading .home-actions button{font-size:14px;min-height:44px;padding:9px 16px}}

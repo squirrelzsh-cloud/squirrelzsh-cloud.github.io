@@ -1,0 +1,35 @@
+/* Shared content edges; backgrounds remain full bleed. */
+:root{--page-gutter:92px}
+.nav{padding-left:var(--page-gutter)!important;padding-right:var(--page-gutter)!important}
+.workbench-intro{left:var(--page-gutter);width:calc(33vw - var(--page-gutter));min-width:220px}
+#approach.designer-resume{padding-left:var(--page-gutter);padding-right:var(--page-gutter)}
+.designer-sheet{max-width:none}.designer-layout{gap:clamp(28px,5vw,80px)}
+.editorial-page{padding-left:var(--page-gutter);padding-right:var(--page-gutter)}
+.environment-caption{left:var(--page-gutter);right:var(--page-gutter)}
+.environment-title{padding-left:var(--page-gutter);padding-right:var(--page-gutter);box-sizing:border-box}
+.realistic-directory .note-heading{width:calc(100% - var(--page-gutter)*2);max-width:none}
+.os-left,.os-portable,.os-label,.os-chapter,.idea-trigger{left:var(--page-gutter)}
+.os-right,.os-detail,.os-skip{right:var(--page-gutter)}
+.os-copy{max-width:calc(34vw - var(--page-gutter))}
+.os-poster-title{left:var(--page-gutter);max-width:calc(100% - var(--page-gutter)*2)}
+.os-ai{left:var(--page-gutter);right:var(--page-gutter)}
+.offline-case{padding-left:var(--page-gutter);padding-right:var(--page-gutter);box-sizing:border-box}
+.offline-close{left:var(--page-gutter)}
+.menu-overlay{padding-left:var(--page-gutter);padding-right:var(--page-gutter)}
+/* One opaque world image and its screen share one camera transform. No scene crossfade. */
+.hero-universe .desk-scene{inset:0;transform:none;opacity:1;overflow:hidden}
+.desk-camera{position:absolute;transform-origin:50% 77.2%;transform:translateY(calc(var(--camera-shift,0px)*(1 - var(--camera-back,0)))) scale(calc(2.7 - var(--camera-back,0)*1.675));will-change:transform}
+.hero-universe .desk-camera>img{content:normal!important;display:block;width:100%;height:100%;object-fit:fill;transform:none!important;transition:none;filter:saturate(.96) brightness(1.03)}
+.hero-universe .desk-camera .desk-screen-plane{transform:none!important;transition:none}
+.desk-focus{display:none}
+.desk-screen{container-type:inline-size}
+.desk-screen-copy strong{font-size:8cqw}.desk-screen-copy p{font-size:3.5cqw}.desk-screen-copy small{font-size:2.5cqw}
+.hero-universe .hero-copy-layer{transform:scale(calc(1 - var(--hero-exit,0)*.035))}
+.hero-universe .realistic-directory{opacity:1;transform:none;background:transparent}
+.hero-universe .realistic-directory:before,.hero-universe .realistic-directory:after{display:none!important;background:none!important}
+.hero-universe .realistic-directory>div,.hero-universe .realistic-directory>a{opacity:var(--chapter-reveal,0)}
+@media(max-width:1000px){:root{--page-gutter:48px}.os-copy{max-width:30vw}.workbench-intro{width:28vw;min-width:0}}
+@media(max-width:800px){:root{--page-gutter:24px}.workbench-intro{width:calc(100% - var(--page-gutter)*2);max-width:none}.workbench-summary,.workbench-cta,.workbench-signature{left:var(--page-gutter)}.workbench-summary{max-width:calc(100vw - var(--page-gutter)*2)}.os-copy{max-width:42vw}.os-right,.os-detail{max-width:60vw}.os-portable{max-width:calc(100% - var(--page-gutter)*2)}.editorial-columns{columns:1}.os-label{max-width:52vw}}
+@media(prefers-reduced-motion:reduce){.hero-universe .desk-scene,.hero-universe .hero-copy-layer,.hero-universe .realistic-directory:before{transform:none}}
+
+@media(prefers-reduced-motion:reduce){.desk-camera{transform:none}}

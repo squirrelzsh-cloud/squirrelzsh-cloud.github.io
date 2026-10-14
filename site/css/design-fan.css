@@ -1,0 +1,74 @@
+/* Five portraits, one shallow fan: matched to supplied 4.54s reference. */
+.design-fan{position:absolute;inset:0;z-index:12;background:#463721;color:#f8f8f0;overflow:hidden;--fan-rise:48vh;--fan-scale:.94;--fan-wave:0vh}
+.fan-wave{position:absolute;z-index:5;top:-10vh;left:0;width:100%;height:30vh;background:#f8f8f0;transform:translateY(var(--fan-wave));pointer-events:none}
+.fan-wave:after{content:"";position:absolute;bottom:-10px;left:0;width:100%;height:20px;background:radial-gradient(ellipse at 50% 0,#f8f8f0 70%,transparent 72%) 0 0/44px 20px repeat-x}
+.fan-rule{position:absolute;inset:100px 24px auto;display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid #8b795655;padding-top:7px;font-size:12px;letter-spacing:.04em;color:#8b7956}
+.fan-deck{position:absolute;inset:0;transform:translateY(var(--fan-rise)) scale(var(--fan-scale));transform-origin:50% 65%;pointer-events:none}
+.fan-card{position:absolute;left:50%;top:50%;width:22vw;height:57vh;max-height:650px;margin:0;border-radius:3px;overflow:hidden;box-shadow:0 14px 24px #0a05052e;transform-origin:50% 50%;background:#eeeadd}
+.fan-card:nth-child(1){transform:translate(-216%,-18%) rotate(-32deg);z-index:1}
+.fan-card:nth-child(2){transform:translate(-135%,-38%) rotate(-17deg);z-index:2}
+.fan-card:nth-child(3){transform:translate(-50%,-53%);z-index:3}
+.fan-card:nth-child(4){transform:translate(35%,-38%) rotate(17deg);z-index:4}
+.fan-card:nth-child(5){transform:translate(116%,-18%) rotate(32deg);z-index:5}
+.fan-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.fan-photo:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#1d170bb3)}
+.fan-card figcaption{position:absolute;bottom:9%;left:10%;z-index:1;font-size:clamp(24px,3vw,50px);line-height:1.2;color:#f8f8f0}
+.fan-card small{display:block;font-size:12px;letter-spacing:.08em;margin-top:12px}
+.fan-yellow,.fan-paper{padding:8% 10%;color:#292416;display:flex;flex-direction:column;justify-content:space-between}
+.fan-yellow{background:#eef56b}.fan-paper{background:#efeedf}
+.fan-card.fan-yellow,.fan-card.fan-paper{padding:2.3vw}
+.fan-card h2{font-size:clamp(25px,3.7vw,64px);line-height:1.15;letter-spacing:-.06em;font-weight:500;margin:auto 0}
+.fan-card p{font-size:clamp(14px,1.15vw,18px);line-height:1.6;color:inherit}
+.fan-footer{position:absolute;bottom:24px;left:0;width:100%;text-align:center;color:#8b7956;font-size:14px}
+@media(max-width:700px){.fan-card{width:31vw;height:42vh}.fan-rule{inset:90px 16px auto;font-size:10px}.fan-rule span:nth-child(2){display:none}.fan-card h2{font-size:25px}.fan-card p{font-size:12px}.fan-card small{font-size:10px}.fan-card figcaption{font-size:23px}.fan-footer{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.design-fan{display:none}}
+
+/* The fan is now the only project index; the removed timeline reserves no space. */
+.object-story.fan-only{height:240svh;background:#463721}
+.fan-only .design-fan{visibility:visible;opacity:1}
+.fan-work-anchor{position:absolute;top:30%;width:1px;height:1px}
+.fan-only .fan-deck{pointer-events:none}
+.fan-only .fan-card{pointer-events:auto;cursor:pointer;text-decoration:none;color:#f8f8f0;transition:filter .2s;touch-action:pan-y}
+.fan-only .fan-card:hover{filter:brightness(1.13);z-index:8}
+.fan-only .fan-card:focus-visible{outline:3px solid #ffe386;outline-offset:5px;z-index:8}
+.fan-caption{position:absolute;z-index:2;bottom:8%;left:9%;right:9%;color:#f8f8f0}
+.fan-caption h2{font-size:clamp(24px,3vw,48px);margin:12px 0 20px;letter-spacing:-.04em}
+.fan-caption small{font-size:12px;line-height:1.5;letter-spacing:0}
+.fan-caption>span{font-size:14px;border-bottom:1px solid #f8f8f077;padding-bottom:5px}
+.viewing-project-fan .nav,.viewing-project-fan .nav .logo,.viewing-project-fan .top-links a{color:#fff1d6}
+.viewing-project-fan .top-links a.active{color:#233629}
+@media(max-width:700px){.fan-only .fan-card{width:32vw}.fan-caption h2{font-size:23px}.fan-caption small{font-size:10px}.fan-caption>span{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.object-story.fan-only{height:auto}.fan-only .os-stage{height:auto;min-height:0}.fan-only .design-fan{display:block;position:relative;padding:110px 24px 60px}.fan-only .fan-wave{display:none}.fan-only .fan-deck{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;transform:none!important}.fan-only .fan-card{position:relative;left:auto;top:auto;width:100%;height:420px;transform:none}.fan-only .fan-rule{top:65px}.fan-only .fan-footer{bottom:20px}}
+/* CircularGallery: bowed image planes, separated titles and looping navigation. */
+.circular-ready .fan-deck{pointer-events:auto;touch-action:pan-y;cursor:grab}
+.circular-ready .fan-deck:active{cursor:grabbing}
+.circular-ready .fan-deck canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.circular-ready .fan-card{background:none;box-shadow:none;overflow:visible;border-radius:0;z-index:1!important;max-height:none}
+.circular-ready .fan-card img,.circular-ready .fan-card:after{display:none}
+.circular-ready .fan-caption{top:calc(100% + 16px);bottom:auto;left:-20%;right:-20%;text-align:center}
+.circular-ready .fan-caption h2{margin:0;font-size:clamp(20px,2.1vw,32px);font-weight:700;letter-spacing:-.02em}
+.circular-ready .fan-caption small,.circular-ready .fan-caption>span{display:none}
+.circular-ready .fan-card:hover{filter:none}
+.circular-ready .fan-card:hover h2{color:#ffe386}
+.circular-ready .fan-deck:focus-visible{outline:2px solid #ffe386;outline-offset:-10px}
+
+/* Compact, landscape covers retain the uploaded presentation composition. */
+.fan-only .fan-card{width:min(28vw,340px);height:auto;aspect-ratio:3/4}
+.fan-only .fan-card img{object-fit:contain}
+.circular-ready .fan-caption{top:calc(100% + 14px);left:-8%;right:-8%}
+.circular-ready .fan-caption h2{font-size:clamp(15px,1.45vw,21px);font-weight:500;line-height:1.4}
+.fan-only .fan-card[aria-disabled="true"]{cursor:default}
+.fan-only .fan-card[aria-disabled="true"] h2{opacity:.45}
+.fan-only .fan-card[aria-disabled="true"]:hover h2{color:inherit}
+@media(prefers-reduced-motion:reduce){.fan-only .fan-card{width:100%;height:auto;aspect-ratio:3/4;overflow:visible;margin-bottom:64px}.fan-only .fan-caption{top:calc(100% + 12px);bottom:auto}.fan-only .fan-caption h2{font-size:18px}.fan-only .fan-caption small,.fan-only .fan-caption>span{display:none}}
+
+/* A clear selection frame follows only the settled center card. */
+.circular-ready .fan-card:before{content:"";position:absolute;inset:-12px;border:1px dashed #f8f8f0;border-radius:14px;opacity:0;pointer-events:none;transition:opacity .18s}
+.circular-ready .fan-card.is-centered:before{opacity:.9}
+.circular-ready .fan-card{cursor:ew-resize}
+.circular-ready .fan-card.is-centered{cursor:pointer}
+.circular-ready .fan-card[aria-disabled="true"].is-centered{cursor:default}
+.circular-ready .fan-caption h2{font-size:clamp(18px,1.6vw,25px);font-weight:500}
+.circular-ready .fan-card:not(.is-centered) .fan-caption{opacity:.65}
+.circular-ready .fan-card:hover h2{color:inherit}
+@media(max-width:700px){.circular-ready .fan-card:before{inset:-8px;border-radius:10px}}

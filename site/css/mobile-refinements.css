@@ -1,0 +1,75 @@
+/* Final compact layout rules. Keep the desktop composition and motion intact. */
+@media(max-width:800px){
+ html{scroll-padding-top:88px}
+ html body nav.nav{padding-top:calc(12px + env(safe-area-inset-top));padding-bottom:12px}
+ html body nav.nav .menu-button{width:44px;height:44px}
+ html body nav.nav.nav-expanded{background:var(--paper);color:var(--ink)!important;box-shadow:0 8px 24px #46372118}
+ html body nav.nav.nav-expanded .top-links a{color:var(--ink)!important;padding:10px 8px;min-height:44px}
+ .studio-heading{height:auto;min-height:max(48svh,340px);padding-top:calc(82px + env(safe-area-inset-top));padding-bottom:20px}
+ .studio-heading .home-identity{height:auto;grid-template-columns:minmax(0,1fr);grid-template-rows:none;gap:8px;align-content:start}
+ .studio-heading .home-identity>*{grid-column:1!important;grid-row:auto!important;min-width:0}
+ .studio-heading .home-role{display:none}
+ .studio-heading .home-identity h1{font-size:clamp(36px,9vw,58px);line-height:1.2;margin:0}
+ .studio-heading .home-identity h2{font-size:16px;line-height:1.5}
+ .studio-heading .home-description{font-size:14px!important;line-height:1.6;max-width:38em}
+ .studio-heading .home-actions{margin-top:6px;flex-wrap:wrap}
+ .studio-footer{left:24px;right:24px;bottom:28px;font-size:11px;gap:12px}
+ .studio-footer a{font-size:11px}
+ html body .reference-showcase{padding-top:104px!important;padding-bottom:88px!important;scroll-margin-top:80px}
+ html body .reference-showcase .rs-heading h2{font-size:clamp(28px,6vw,40px);line-height:1.35}
+ html body .reference-showcase .rs-heading>p{font-size:12px;margin-bottom:16px}
+ html body .reference-showcase .rs-skill-row,
+ html body .reference-showcase .rs-skill-row.has-active{height:auto;min-height:0;align-items:stretch}
+ html body .reference-showcase .rs-skill{min-height:140px}
+ html body .reference-showcase .rs-skill-row.has-active .rs-skill{min-height:240px}
+ html body .reference-showcase .rs-project{grid-template-columns:1fr;min-height:0}
+ html body .reference-showcase .rs-image{min-height:0;aspect-ratio:4/3}
+ html body .reference-showcase .rs-image img{height:100%;object-fit:contain}
+ html body .reference-showcase .rs-copy{padding:28px 24px;gap:0}
+ html body .reference-showcase .rs-copy h3{font-size:28px;line-height:1.35;overflow-wrap:anywhere}
+ .rs-project-description{font-size:16px;line-height:1.75}
+ .rs-projects.has-active .rs-project:not(.is-active){opacity:1}
+ #selected-work,#approach,#skills{scroll-margin-top:88px}
+ #approach .designer-layout{grid-template-columns:minmax(0,1fr)}
+ #approach .designer-layout>*{min-width:0}
+ #approach .designer-intro h2{font-size:clamp(40px,10vw,60px)}
+ #approach .designer-lead{font-size:26px}
+ #approach .designer-summary,#approach .designer-details p{font-size:16px;overflow-wrap:anywhere}
+ .editorial-page{padding-inline:20px}
+ .editorial-practice-grid{grid-template-columns:minmax(0,1fr)}
+ .editorial-end{flex-wrap:wrap;line-height:1.7;padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+ .particle-signature{height:clamp(300px,65svh,440px)}
+ body .project-reader.reference-reader{width:calc(100% - 16px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px)}
+ .reference-reader .reference-info{padding:28px 24px}
+ .reference-reader .case-hero small{padding-right:44px}
+ .reference-reader .reference-close{width:44px;height:44px;top:10px;right:10px}
+ html body .reference-reader .case-hero p,html body .reference-reader .reference-notes p{font-size:16px;line-height:1.8}
+ .reference-reader .case-toc{gap:8px;overflow:visible;flex-wrap:wrap}
+ .reference-reader .case-toc button{font-size:13px;min-height:44px;padding:10px 12px;white-space:normal}
+ .reference-reader .reference-tags span{font-size:12px}
+ .reference-reader .case-main{padding:0 16px 28px}
+ .reference-reader .heritage-figure img{max-width:100%;height:auto}
+ .reference-reader .heritage-figure figcaption{font-size:13px}
+ .reference-reader .case-next{flex-wrap:wrap}
+}
+@media(max-width:520px){
+ html body .reference-showcase .rs-skill-row{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+ html body .reference-showcase .rs-skill,
+ html body .reference-showcase .rs-skill-row.has-active .rs-skill{min-height:88px;padding:24px 60px 24px 20px}
+ html body .reference-showcase .rs-skill-title{position:static;font-size:19px;line-height:1.5}
+ html body .reference-showcase .rs-description{position:static;display:none;font-size:15px;line-height:1.75;transform:none;margin-top:16px}
+ html body .reference-showcase .rs-skill.is-active .rs-description{display:block;opacity:1}
+ html body .reference-showcase .rs-plus{top:29px;bottom:auto;right:20px}
+ html body .reference-showcase .rs-skill.is-active{min-height:164px}
+ .intro-beat{top:16%;left:20px!important;right:20px!important;width:auto}
+ .intro-beat h2{font-size:28px;line-height:1.35}
+ .intro-beat p{font-size:16px;line-height:1.7;margin:16px 0}
+ .intro-device{width:78vw}
+}
+@media(max-width:800px) and (orientation:landscape){
+ .studio-heading{min-height:0;padding-top:72px;padding-bottom:12px}
+ .studio-heading .home-identity{grid-template-columns:1fr 1fr;gap:6px 20px}
+ .studio-heading .home-identity h1{font-size:32px}.studio-heading .home-description{display:none}
+ .studio-heading .home-actions{grid-column:2!important;grid-row:2/4!important;margin:0}
+ .studio-heading .home-identity h2{font-size:14px}
+}

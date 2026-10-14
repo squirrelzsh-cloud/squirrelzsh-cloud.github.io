@@ -1,0 +1,36 @@
+.hero-universe{height:560svh}
+.desk-scene{transform:none!important;opacity:1!important}
+.hero-sticky:before{opacity:var(--copy-alpha,1)}.hero-sticky:after{display:none}
+.hero-copy-layer{opacity:var(--copy-alpha,1);transform:translateX(var(--copy-x,0px))}
+.desk-story{position:absolute;inset:0;pointer-events:none;z-index:2;background:none!important;overflow:visible}
+.desk-world{position:absolute;width:1672px;height:941px;transform-origin:0 0;pointer-events:none}
+.tablet-carrier{position:absolute;left:0;top:0;width:1672px;height:941px;transform-origin:910px 490px;will-change:transform;z-index:5;pointer-events:none}
+.story-tablet{position:absolute;inset:0;filter:drop-shadow(2px 4px 2px #28150750)}
+.desk-scene .desk-story img{content:normal!important;transform:none!important;transition:none!important;object-fit:fill;pointer-events:none;max-width:none;display:block}
+.desk-scene .story-tablet img{position:absolute;width:1438px;height:809px;left:186px;top:80px;clip-path:inset(23% 26% 24% 27%)}
+.story-left-hand{position:absolute;left:290px;top:190px;width:1003px;height:565px;transform-origin:32% 40%;will-change:transform;z-index:2}
+.story-right-hand{position:absolute;left:0;top:0;width:540px;height:660px;transform-origin:0 0;will-change:transform;z-index:8}
+.desk-scene .story-left-hand>img,.desk-scene .story-right-hand>img{position:relative;width:100%;height:100%;z-index:1}
+.sleeve-tail{position:absolute;left:0;top:80%;width:100%;height:85%;overflow:hidden;z-index:0;pointer-events:none}.desk-scene .sleeve-tail img{position:absolute;left:0;top:-400%;width:100%;height:500%}
+.paper-directory{position:absolute;inset:0;pointer-events:none;z-index:6}
+.paper-note{position:absolute;left:0;top:0;width:188px;height:174px;color:#3c2b18;text-decoration:none;pointer-events:auto;transform-origin:50% 15%;will-change:transform;touch-action:pan-y;background:none}
+.paper-texture{position:absolute;inset:0;overflow:hidden;pointer-events:none}.desk-scene .paper-texture img{position:absolute;width:132.4%;height:140.2%;left:-16%;top:-20.4%}
+.paper-copy{position:absolute;inset:12% 8%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;color:inherit;text-shadow:none;pointer-events:none}
+.paper-copy strong{font:500 29px/1.2 var(--font-display)}.paper-copy em{font:400 14px/1.2 var(--font-body);letter-spacing:.12em;font-style:normal}.paper-copy small{font:400 14px/1.4 var(--font-body);max-width:140px}
+.paper-note:focus-visible{outline:2px dashed #fff8e5;outline-offset:7px}.paper-directory[inert] .paper-note{pointer-events:none}.home-identity h1 span{display:inline}
+@media(max-width:800px){.hero-universe{height:480svh}.paper-copy strong{font-size:30px}.paper-copy small{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.hero-universe{height:180svh}.hero-copy-layer{transform:none}.tablet-carrier,.story-left-hand,.story-right-hand,.paper-note{will-change:auto}}
+
+.desk-scene .desk-base{object-position:center}
+
+.desk-scene .story-left-hand>img{clip-path:inset(22% 64% 0 0)}
+.desk-scene .story-right-hand>img{clip-path:inset(23% 0 0 45%)}
+
+/* End the pinned shot at the exact position of the real resume. */
+.desk-camera-enabled .hero-universe{height:760svh}
+.desk-camera{position:absolute;inset:0;transform-origin:50% 50%;will-change:transform}
+.resume-portal{position:absolute;inset:0;z-index:7;overflow:hidden;pointer-events:none;visibility:hidden;will-change:clip-path}
+.resume-preview{position:relative;min-height:100svh;margin:0;transform-origin:50% 50%;overflow:hidden}
+.desk-camera-enabled #design-intro{margin-top:-100svh;z-index:4}
+@media(max-width:800px){.desk-camera-enabled .hero-universe{height:680svh}}
+@media(prefers-reduced-motion:reduce){.desk-camera-enabled .hero-universe{height:220svh}.desk-camera{will-change:auto}}

@@ -1,0 +1,10 @@
+/* Scoped paper surfaces, preserving the dark project gallery and all motion. */
+.design-intro,.intro-stage,.intro-opening,.resume-portal,.resume-preview,.about-journey,.editorial-page,.environment-scroll,.environment-stage,.environment-paper,.journal-intro{background:#f8f8f0!important}
+.fan-wave{background:#f8f8f0}.fan-wave:after{background:radial-gradient(ellipse at 50% 0,#f8f8f0 70%,transparent 72%) 0 0/44px 20px repeat-x}
+#approach.designer-resume{background:#f8f8f0;color:#463721}
+#approach .designer-heading,#approach .designer-intro h2,#approach .designer-intro h2 span,#approach .designer-lead,#approach .designer-summary,#approach .designer-personal,#approach .designer-details h3,#approach .designer-details h3>span,#approach .designer-details p,#approach .designer-project h4,#approach .designer-project>div>span,#approach .designer-row>span,#approach .designer-status,#approach .designer-tags>span{color:#463721}
+#approach .designer-heading,#approach .designer-details>section,#approach .designer-status,#approach .designer-tags>span{border-color:#46372126}
+#approach .designer-status,#approach .designer-tags>span{background:#f8f8f0}
+.nav.editorial-nav{background:#f8f8f0!important;color:#463721!important}.nav.editorial-nav a,.nav.editorial-nav button,.nav.editorial-nav .logo{color:#463721!important}.nav.editorial-nav svg{stroke:#463721!important}
+
+body{background-color:#f8f8f0}

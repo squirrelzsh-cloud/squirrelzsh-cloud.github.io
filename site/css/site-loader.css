@@ -1,0 +1,18 @@
+html.portfolio-loading,html.portfolio-loading body{overflow:hidden!important}
+#site-loader{position:fixed;inset:0;z-index:2147483646;background:#463721;color:#f8f8f0;display:grid;place-items:center;pointer-events:auto;transition:background-color .75s ease,color .75s ease,opacity 1s ease;isolation:isolate}
+#site-loader .loader-signature{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(20px,2vw,30px);font-weight:500;letter-spacing:-.055em;white-space:nowrap;transition:opacity .45s ease}
+#site-loader .loader-signature:after{content:'';display:block;margin:12px auto 0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;animation:loader-sign 1s ease forwards;opacity:.45}
+#site-loader .loader-center{position:relative;display:grid;place-items:center;opacity:0;transition:opacity .7s ease .35s}
+#site-loader .loader-ring{position:relative;width:clamp(120px,8.6vw,166px);aspect-ratio:1;display:grid;place-items:center}
+#site-loader svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+#site-loader circle{fill:none;stroke:currentColor;stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1.6s cubic-bezier(.22,1,.36,1) .4s}
+#site-loader .loader-label{font-size:12px;font-weight:400;letter-spacing:0}
+#site-loader .loader-copy{position:absolute;top:calc(100% + 32px);width:min(330px,82vw);margin:0;text-align:center;font-size:14px;line-height:1.8;font-weight:400;color:#46372199}
+#site-loader.loader-light{background:#f8f8f0;color:#463721}
+#site-loader.loader-light .loader-signature{opacity:0}
+#site-loader.loader-light .loader-center{opacity:1}
+#site-loader.loader-light circle{stroke-dashoffset:0}
+#site-loader.loader-content-out .loader-center{opacity:0;transition:opacity .6s ease}
+#site-loader.loader-reveal{opacity:0;pointer-events:none}
+@keyframes loader-sign{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){#site-loader,#site-loader *{transition:none!important;animation:none!important}}

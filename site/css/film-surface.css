@@ -1,0 +1,12 @@
+.realistic-directory .sticky-note-board{inset:22% 0 5%;width:100%;height:auto;transform:none;perspective:none;isolation:isolate;touch-action:pan-y}
+.realistic-directory .sticky-note-board:before,.realistic-directory .sticky-note-board:after{display:none!important}
+.realistic-directory .sticky-note-board .desk-note{display:none!important}
+.film-surface{display:block;width:100%;height:100%;touch-action:pan-y;cursor:grab}
+.is-dragging .film-surface{cursor:grabbing}
+.realistic-directory .note-heading{top:12%;z-index:8}
+.realistic-directory .note-heading h2{font-size:clamp(2.4rem,4.4vw,4.7rem);line-height:1.05}
+.realistic-directory .note-heading p{font-size:14px}
+.realistic-directory .film-pagination{bottom:3.5%}
+.film-access{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.film-access:focus-within{width:auto;height:auto;clip-path:none;left:25%;bottom:0;background:#142019;padding:12px;z-index:10;display:flex;gap:20px}
+@media(max-width:800px){.realistic-directory .sticky-note-board{inset:25% 0 9%}.realistic-directory .note-heading{top:13%}}

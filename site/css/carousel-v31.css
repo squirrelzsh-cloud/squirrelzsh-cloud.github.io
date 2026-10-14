@@ -1,0 +1,29 @@
+/* V31 — directory composition aligned to the cinematic spiral reference */
+.realistic-directory{background:#142019;color:#f7f0e5}
+.realistic-directory:before{filter:saturate(.58) brightness(.34) contrast(1.08) blur(.8px);transform:scale(1.18) translate(calc(var(--dir-x) * -.45rem),calc(var(--dir-y) * -.28rem))}
+.realistic-directory:after{background:radial-gradient(ellipse at 50% 35%,#2444351f 0 20%,#0c171180 58%,#070b09d1 100%),linear-gradient(180deg,#0d151094,#17312463 58%,#a8bfa04d 100%)}
+.realistic-directory .note-heading{top:10vh;left:50%;width:min(52rem,90vw);transform:translateX(-50%);text-align:center}
+.realistic-directory .note-heading>span{display:none}
+.realistic-directory .note-heading h2{font:500 clamp(4.3rem,7.2vw,7.8rem)/.82 Georgia,"Songti SC",serif;letter-spacing:-.055em;margin:0;color:#f7f0e5;text-shadow:0 0 .35rem #e8c9958a,0 0 1.6rem #d9ab6761}
+.realistic-directory .note-heading p{margin:.9rem 0 0;color:#f4ead4;font:600 .88rem/1 Georgia,"Songti SC",serif;letter-spacing:.035em;text-shadow:0 1px .65rem #000}
+.realistic-directory .sticky-note-board{top:62%;width:100vw;height:74vh;transform:translate(-50%,-50%) perspective(1900px);overflow:visible}
+.realistic-directory .sticky-note-board:before{width:111vw;height:53vh;border:0;background:#030405;border-radius:45% 52% 48% 42%/18% 19% 20% 21%;transform:translate(-50%,-46%) rotateZ(-5.8deg) skewX(-2deg);opacity:.96;box-shadow:0 2.7rem 4.8rem #000b,0 0 0 1px #f5dca62e inset;filter:none}
+.realistic-directory .sticky-note-board:after{width:108vw;height:48vh;border-top:1px solid #b8cee15c;border-bottom:1px solid #cfae7461;border-radius:48% 52% 47% 43%/18% 19% 20% 21%;transform:translate(-50%,-46%) rotateZ(-5.8deg) skewX(-2deg);opacity:.75}
+.realistic-directory .desk-note{width:clamp(27rem,43vw,43rem)!important;height:clamp(20rem,36vw,35rem)!important;padding:4rem 2rem!important;border-radius:4px!important;border-color:#121619!important;background:#030405!important;box-shadow:0 3rem 7rem #000c!important}
+.realistic-directory .desk-note:before{inset:2.35rem 0;background:linear-gradient(90deg,#0005,transparent 20% 78%,#0006),var(--card-art);background-size:cover;background-position:center;filter:saturate(.82) contrast(1.05)}
+.realistic-directory .desk-note:after{background:repeating-linear-gradient(90deg,transparent 0 13px,#b8c8c7 13px 23px,transparent 23px 35px) 0 .78rem/100% .72rem no-repeat,repeating-linear-gradient(90deg,transparent 0 13px,#a9bbc1 13px 23px,transparent 23px 35px) 0 calc(100% - .78rem)/100% .72rem no-repeat,linear-gradient(180deg,#030405 0 2.35rem,transparent 2.35rem calc(100% - 2.35rem),#030405 calc(100% - 2.35rem));opacity:.78}
+.realistic-directory .desk-note-1{--card-art:url('../assets/hero-designer-desk-light.webp')}
+.realistic-directory .desk-note-2{--card-art:url('../assets/directory-workspace-real.webp')}
+.realistic-directory .desk-note-3{--card-art:url('../assets/dark-studio-v28.webp')}
+.realistic-directory .desk-note-4{--card-art:url('../assets/manifesto-lamp-transition.webp')}
+.realistic-directory .desk-note small{font-size:.78rem}.realistic-directory .desk-note strong{font-size:clamp(3rem,5vw,5.5rem)!important}.realistic-directory .desk-note em{font-size:.78rem}
+.realistic-directory .desk-note:not(.is-active) small,.realistic-directory .desk-note:not(.is-active) strong,.realistic-directory .desk-note:not(.is-active) em{opacity:.72}
+.realistic-directory .desk-note.is-active{border-color:#e4d2ae45!important;box-shadow:0 3.5rem 8rem #000e!important}
+.realistic-directory .desk-note.is-active:before{filter:saturate(.95) contrast(1.03) brightness(1.02)}
+.realistic-directory .chapter-next{display:none}
+.film-arrow{position:absolute;z-index:15;bottom:6.3vh;width:3.25rem;height:3.25rem;border:1px solid #e6ddcc5a;border-radius:4px;background:#050708dc;color:#f5ead8;display:grid;place-items:center;font-size:1.45rem;box-shadow:0 .9rem 2rem #0008;transition:transform .25s,background .25s}
+.film-arrow:hover{transform:translateY(-.2rem);background:#17261e}.film-arrow:active{transform:scale(.96)}.film-prev{left:4.5vw}.film-next{right:4.5vw}
+.film-pagination{position:absolute;z-index:15;left:50%;bottom:6.9vh;transform:translateX(-50%);display:flex;align-items:center;gap:.78rem}
+.film-dot{width:.55rem;height:.55rem;padding:0;border:0;border-radius:50%;background:#f4ecdc8a;box-shadow:0 1px .35rem #000;transition:width .3s,background .3s,box-shadow .3s}
+.film-dot.is-active{width:1.2rem;border-radius:99px;background:#f4e6ca;box-shadow:0 0 0 1px #152019,0 0 0 2px #f4e6ca}
+@media(max-width:800px){.realistic-directory .note-heading{top:11vh}.realistic-directory .note-heading h2{font-size:13vw}.realistic-directory .note-heading p{font-size:.72rem}.realistic-directory .sticky-note-board{top:61%;height:65vh}.realistic-directory .sticky-note-board:before{width:165vw;height:42vh}.realistic-directory .sticky-note-board:after{width:158vw;height:38vh}.realistic-directory .desk-note{width:84vw!important;height:64vw!important}.film-arrow{bottom:5vh;width:2.8rem;height:2.8rem}.film-prev{left:1.5rem}.film-next{right:1.5rem}.film-pagination{bottom:5.9vh}}

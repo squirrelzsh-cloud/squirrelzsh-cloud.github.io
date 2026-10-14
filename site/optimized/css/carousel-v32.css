@@ -1,0 +1,32 @@
+/* V32 — side-view studio background + poster frames fixed to the film surface */
+.universe-scroll{display:none!important}
+.realistic-directory{background:#1a2c22}
+.realistic-directory:before{
+  inset:0;background:url('../assets/directory-home-matched.png') center/cover no-repeat;
+  filter:saturate(.96) brightness(1.03) contrast(1.01);
+  transform:scale(1.025) translate(calc(var(--dir-x) * -.35rem),calc(var(--dir-y) * -.22rem));
+}
+.realistic-directory:after{background:linear-gradient(180deg,#f2e7d20a 0,transparent 55%,#17241c18 100%)}
+.realistic-directory .sticky-note-board{isolation:isolate}
+.realistic-directory .sticky-note-board:before{z-index:-2}
+.realistic-directory .sticky-note-board:after{z-index:-1}
+.realistic-directory .desk-note{
+  width:clamp(23rem,38vw,38rem)!important;height:clamp(17rem,29vw,29rem)!important;
+  padding:3.6rem 1.5rem!important;border:0!important;border-radius:3px!important;
+  box-shadow:0 0 0 1px #afc0c02c!important;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;contain:paint;
+}
+.realistic-directory .desk-note:before{
+  inset:2.35rem .55rem;overflow:hidden;border:1px solid #f0e3c429;
+  background-size:cover;background-position:center;filter:saturate(.9) contrast(1.04) brightness(.9);
+}
+.realistic-directory .desk-note:after{z-index:1}
+.realistic-directory .desk-note small,.realistic-directory .desk-note strong,.realistic-directory .desk-note em,.realistic-directory .desk-note>i{z-index:3}
+.realistic-directory .desk-note.is-active{border:0!important;box-shadow:0 0 0 1px #f0dfbd4f!important}
+.realistic-directory .desk-note:hover{box-shadow:0 0 0 1px #f5e5c87a!important}
+.film-arrow{display:none!important}
+@media(max-width:800px){.realistic-directory:before{background-position:55% center}.realistic-directory .desk-note{width:78vw!important;height:59vw!important;padding:3rem 1rem!important}}
+
+/* Daylit studio: readable text without darkening the whole scene. */
+.realistic-directory .note-heading h2{color:#173a2b;text-shadow:0 1px 12px #f8f5e488}
+.realistic-directory .note-heading p{color:#173a2b;text-shadow:0 1px 8px #f8f5e488}

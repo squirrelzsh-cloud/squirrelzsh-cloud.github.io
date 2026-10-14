@@ -1,0 +1,41 @@
+/* Desktop readability scale: align utility text with the resume page's 16px body rhythm. */
+@media (min-width: 801px) {
+  html body nav.nav .top-links a {
+    font-size: 17px !important;
+    line-height: 1.45;
+  }
+  html body nav.nav .logo-wordmark {
+    font-size: 28px !important;
+  }
+  .studio-heading .home-portfolio-label {
+    font-size: 13px !important;
+    line-height: 1.55;
+  }
+  .studio-heading .home-role {
+    font-size: 14px !important;
+    line-height: 1.7;
+    letter-spacing: .08em;
+  }
+  .studio-heading .home-description {
+    font-size: 16px !important;
+    line-height: 1.8;
+  }
+  html body .studio-heading .home-actions a,
+  html body .studio-heading .home-actions button {
+    font-size: 16px !important;
+  }
+  .studio-footer,
+  .studio-footer a,
+  .studio-footer .studio-caption {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  html body nav.nav .top-links a {
+    font-size: 15px !important;
+  }
+  .studio-heading .home-description {
+    font-size: 13px !important;
+  }
+}

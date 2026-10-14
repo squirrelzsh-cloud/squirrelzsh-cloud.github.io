@@ -1,0 +1,7 @@
+/* Shared UI rules for the site, project readers, and responsive layouts. */
+:root{--ui-radius:20px;--portfolio-font:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;--font-body:var(--portfolio-font);--font-display:var(--portfolio-font);--font-sans:var(--portfolio-font)}
+html body,html body *,html body .studio-opening *,html.studio-active body .nav *{font-family:var(--portfolio-font)!important}
+body img,body button,body [role="button"],body input[type="button"],body input[type="submit"],body a{border-radius:var(--ui-radius)!important}
+body .rs-image,body .rs-project,body .rs-skill,body .ce-orb,body .fan-card,body .fan-card-image,body .fan-selection,body .heritage-figure a,body .work-card,body .project-card,body .os-media,body .editorial-hero,body .ce-view,body .rs-cta,body .qr-card,body .contact-popover{border-radius:var(--ui-radius)!important}
+/* Cropping containers inherit the same edge as their image. */
+body figure:has(>img),body figure:has(>a>img){border-radius:var(--ui-radius)!important}

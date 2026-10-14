@@ -1,0 +1,17 @@
+.design-intro{position:relative;height:405svh;background:#fff;color:#204b43}
+.intro-stage{position:sticky;top:0;height:100svh;overflow:hidden;perspective:1200px;background:#fff}
+.intro-opening{position:absolute;inset:0;display:grid;place-items:center;align-content:center;background:#fff;color:#204b43;text-align:left}
+.intro-opening h2,.intro-beat h2{position:relative;z-index:1;font-family:var(--font-body);font-size:clamp(30px,3.8vw,64px);line-height:1.2;letter-spacing:-.045em;font-weight:450;margin:0}
+.intro-rings{position:absolute;left:50%;top:50%;display:flex;gap:4vw;transform:translate(-50%,-50%);filter:blur(14px);opacity:.65}
+.intro-rings i{width:18vw;height:18vw;max-width:280px;max-height:280px;border:2vw solid #7aeec8;border-radius:50%}
+.intro-device{position:absolute;width:min(39vw,620px);left:50%;top:50%;transform-style:preserve-3d;will-change:transform;filter:drop-shadow(0 24px 20px #133c4225);pointer-events:none}
+.intro-device-crop{position:relative;width:100%;aspect-ratio:762/484;overflow:hidden}.intro-device img{position:absolute;max-width:none;width:219.42%;height:194.42%;left:-61.42%;top:-47.1%;object-fit:fill}
+.intro-beat{position:absolute;top:32%;width:38%;will-change:transform,opacity}.intro-beat-one,.intro-beat-three{right:92px}.intro-beat-two{left:92px}
+.intro-beat p{font:400 clamp(16px,1.1vw,19px)/1.8 var(--font-body);margin:32px 0 24px;max-width:34em}.intro-beat a{display:inline-block;padding:12px 20px;background:#81ecc8;color:#153c32;font-size:16px;text-decoration:none;border-radius:4px}.intro-beat a:hover{background:#b3f8e0}
+[data-ink] span{color:var(--ink-color,#204b43)}
+
+
+@media(max-width:800px){.intro-beat{width:calc(100% - 48px);left:24px!important;right:auto!important;top:18%}.intro-beat h2,.intro-opening h2{font-size:clamp(28px,6.8vw,42px)}.intro-beat p{margin:20px 0;font-size:16px}.intro-device{width:76vw}.intro-rings i{width:32vw;height:32vw;border-width:4vw}.design-intro{height:366svh}}
+@media(prefers-reduced-motion:reduce){.intro-rings{filter:blur(8px)}.intro-device{will-change:auto}}
+
+.intro-reading .nav,.intro-reading .nav .logo{color:#204b43}.intro-reading .nav .menu-button{color:#204b43}

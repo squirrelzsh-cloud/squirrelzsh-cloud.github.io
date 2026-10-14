@@ -1,0 +1,30 @@
+/* V29 — Home → Directory: cylindrical, depth-ranked chapter rail */
+.hero-universe{height:520svh}
+.realistic-directory{--dir-x:0;--dir-y:0;--rail-tilt:7deg;overflow:hidden;perspective:1500px;background:#17251d;color:#f4ead8}
+.realistic-directory:before{filter:saturate(.72) brightness(.42) contrast(1.12) blur(1px);transform:scale(1.22) translate(calc(var(--dir-x) * -.7rem),calc(var(--dir-y) * -.45rem))}
+.realistic-directory:after{background:radial-gradient(ellipse at 50% 54%,transparent 0 22%,#0e17119c 72%),linear-gradient(180deg,#101a1496 0,transparent 43%,#0d1510c9 100%)}
+.realistic-directory .note-heading{top:8.5vh;left:5vw;width:90vw;text-align:left;color:#f4ead8}
+.realistic-directory .note-heading>span{color:#d7b77c}.realistic-directory .note-heading h2{font-size:clamp(3.5rem,6.5vw,7.5rem);line-height:.84;margin:.75rem 0 .7rem}.realistic-directory .note-heading p{color:#f4ead8a6;font-size:.72rem;letter-spacing:.16em}
+.realistic-directory .sticky-note-board{position:absolute;left:50%;top:58%;width:100vw;height:56vh;transform:translate(-50%,-50%) perspective(1500px) rotateX(var(--rail-tilt));transform-style:preserve-3d;touch-action:pan-y;cursor:grab;transition:none}
+.realistic-directory .sticky-note-board:before,.realistic-directory .sticky-note-board:after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.realistic-directory .sticky-note-board:before{width:112vw;height:25vh;border-top:2.4rem solid #c8a766;border-bottom:2.4rem solid #5d482d;border-radius:50%;opacity:.8;filter:drop-shadow(0 2.2rem 2rem #070a08b5);transform:translate(-50%,-42%) perspective(900px) rotateX(69deg)}
+.realistic-directory .sticky-note-board:after{width:108vw;height:1px;background:#ffe6b777;box-shadow:0 8.2rem #100e0bb0;transform:translate(-50%,-4.2rem) rotate(-1deg)}
+.realistic-directory .sticky-note-board.is-dragging{cursor:grabbing}
+.realistic-directory .sticky-note-board:focus-visible{outline:1px solid #f4ead899;outline-offset:-1.2rem}
+.realistic-directory .desk-note{--card-x:0px;--card-y:0px;--card-z:0px;--card-ry:0deg;--card-scale:1;--card-blur:0px;--card-light:1;--card-alpha:1;left:50%!important;top:50%!important;width:clamp(14rem,21vw,22rem)!important;height:clamp(18rem,27vw,27rem)!important;padding:1.25rem!important;border:1px solid #f4ead84d!important;border-radius:7px!important;background:#1c271f!important;box-shadow:0 2.5rem 5rem #0508069c!important;filter:blur(var(--card-blur)) brightness(var(--card-light)) saturate(.88)!important;opacity:var(--card-alpha);transform:translate(-50%,-50%) translate3d(var(--card-x),var(--card-y),var(--card-z)) rotateY(var(--card-ry)) scale(var(--card-scale))!important;transform-origin:center!important;animation:none!important;transition:filter .22s,opacity .22s,box-shadow .35s;overflow:hidden;isolation:isolate;will-change:transform,filter,opacity}
+.realistic-directory .desk-note:before{display:block!important;content:"";position:absolute;inset:0;background:linear-gradient(145deg,#ffffff20,transparent 34%,#0007),var(--card-art);opacity:.9;z-index:-2}
+.realistic-directory .desk-note:after{content:"";position:absolute;inset:0;width:auto;height:auto;background:linear-gradient(180deg,transparent 32%,#101712e8 90%);clip-path:none;opacity:1;z-index:-1;animation:none}
+.realistic-directory .desk-note-1{--card-art:linear-gradient(135deg,#be9368 0 38%,#315a43 38% 67%,#eadbbf 67%)}
+.realistic-directory .desk-note-2{--card-art:radial-gradient(circle at 67% 30%,#f3d79a 0 7%,transparent 7.5%),linear-gradient(135deg,#1f4934 0 43%,#b9d77a 43% 70%,#e7d3af 70%)}
+.realistic-directory .desk-note-3{--card-art:linear-gradient(155deg,#765139 0 30%,#d6aa68 30% 53%,#264936 53%)}
+.realistic-directory .desk-note-4{--card-art:radial-gradient(circle at 30% 24%,#d7b16d 0 8%,transparent 8.5%),linear-gradient(145deg,#efe0c4 0 34%,#31573f 34% 72%,#a9764f 72%)}
+.realistic-directory .desk-note small,.realistic-directory .desk-note strong,.realistic-directory .desk-note em{position:relative;z-index:2;color:#f4ead8;text-shadow:0 2px 1rem #0009;text-align:left;align-self:flex-start;font-family:Arial,"PingFang SC",sans-serif!important}
+.realistic-directory .desk-note small{margin:0;font-size:.72rem;letter-spacing:.18em}.realistic-directory .desk-note strong{margin:auto 0 .65rem;font-family:"Songti SC",Georgia,serif!important;font-weight:500;font-size:clamp(2.2rem,3.4vw,4rem);line-height:.9;letter-spacing:-.05em}.realistic-directory .desk-note em{font-size:.68rem;letter-spacing:.14em;opacity:.72}.realistic-directory .desk-note>i{opacity:1;right:1.2rem;top:1.1rem;color:#f4ead8}
+.realistic-directory .desk-note.is-active{border-color:#f4ead8b8!important;box-shadow:0 3rem 7rem #020403d1,0 0 0 1px #f4ead81f inset!important}
+.realistic-directory .desk-note.is-active:before{opacity:1}
+.realistic-directory .desk-note:hover{filter:blur(0)!important brightness(1.08)!important saturate(1)!important}
+.realistic-directory .chapter-next{bottom:2.1rem}.realistic-directory .chapter-next span:before{content:"滚动或拖动浏览 · ";opacity:.58}
+@media(max-width:800px){
+ .hero-universe{height:480svh}.realistic-directory .note-heading{top:10vh;left:1.4rem}.realistic-directory .note-heading h2{font-size:12vw}.realistic-directory .sticky-note-board{top:58%;height:48vh}.realistic-directory .desk-note{width:58vw!important;height:76vw!important}.realistic-directory .sticky-note-board:before{width:190vw}.realistic-directory .chapter-next span:before{content:"左右拖动 · "}
+}
+@media(prefers-reduced-motion:reduce){.realistic-directory .desk-note{filter:none!important;opacity:1!important}}

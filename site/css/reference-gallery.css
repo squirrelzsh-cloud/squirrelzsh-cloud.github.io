@@ -1,0 +1,63 @@
+/* Recording-led gallery and expanding project reader. */
+#object-story.object-story{height:110svh;background:#463721;color:#f8f8f0}
+#object-story .os-stage{height:100svh;min-height:580px;overflow:hidden;background:#463721}
+#object-story .design-fan{opacity:1;visibility:visible}
+#object-story .fan-deck{transform:none!important;z-index:2}
+#object-story .fan-wave{display:none}
+#object-story .fan-rule{top:100px;border:0;color:#f8f8f0;opacity:.65;font-size:11px;letter-spacing:.09em}
+#object-story .fan-footer{bottom:32px;color:#f8f8f0;font-size:12px;opacity:.65}
+#object-story .design-fan:before{content:'';position:absolute;left:-50%;right:-50%;height:65%;bottom:-35%;background-image:linear-gradient(#f8f8f019 1px,transparent 1px),linear-gradient(90deg,#f8f8f019 1px,transparent 1px);background-size:80px 80px;transform:perspective(450px) rotateX(58deg);transform-origin:center top;mask-image:linear-gradient(transparent,#000 35%,transparent);pointer-events:none}
+#object-story .circular-ready .fan-card{aspect-ratio:3/2;cursor:pointer}
+#object-story .circular-ready .fan-card:before{display:none}
+#object-story .circular-ready .fan-caption{top:auto;bottom:20px;left:24px;right:24px;display:flex;align-items:end;justify-content:space-between;text-align:left;opacity:1;pointer-events:none}
+#object-story .circular-ready .fan-caption h2{font-size:clamp(15px,1.35vw,23px);color:#f8f8f0;font-weight:500;margin:0;text-shadow:0 1px 8px #0008}
+#object-story .circular-ready .fan-caption>span{display:grid;place-items:center;font-size:0;width:32px;height:32px;background:#463721;color:#f8f8f0;border-radius:50%;transition:transform .25s}
+#object-story .circular-ready .fan-caption>span:after{content:'↗';font-size:17px}
+#object-story .circular-ready .fan-card:hover .fan-caption>span{transform:rotate(45deg);background:#f8f8f0;color:#463721}
+#object-story .circular-ready .fan-card[aria-disabled=true]{cursor:default}
+#object-story .circular-ready .fan-card[aria-disabled=true] .fan-caption>span{display:none}
+#object-story .design-fan:not(.circular-ready) .fan-card{aspect-ratio:3/2;height:auto}
+body .project-reader.reference-reader{position:fixed;inset:0;margin:auto;width:calc(100vw - 64px);height:calc(100svh - 40px);max-width:none;max-height:none;padding:0;border:0;border-radius:20px;background:#f8f8f0;color:#463721;overflow:hidden;box-shadow:0 20px 90px #0004}
+.project-reader.reference-reader::backdrop{background:#160d0899}
+.reference-reader .case-nav,.reference-reader .case-progress{display:none}
+.reference-reader .case-scroll{height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;background:#f8f8f0;scrollbar-width:thin;scrollbar-color:#46372155 transparent;padding:0}
+.reference-reader .case-layout{display:grid;grid-template-columns:39% minmax(0,61%);gap:0;padding:0;margin:0;max-width:none;align-items:start}
+.reference-reader .reference-info{position:sticky;top:0;padding:40px 32px;max-height:calc(100svh - 40px);overflow-y:auto;scrollbar-width:thin}
+.reference-reader .case-hero{display:block;margin:0;padding:0;height:auto;min-height:0;max-width:none;background:transparent;color:#463721;text-align:left;border:0}
+.reference-reader .case-hero small{display:block;color:#786950;font-size:11px;letter-spacing:.06em;margin-bottom:18px}
+.reference-reader .case-hero h1{font-size:clamp(26px,3.1vw,48px);font-weight:500;line-height:1.2;letter-spacing:-.04em;margin:0 0 24px;color:#463721}
+.reference-reader .case-hero p{font-size:14px;line-height:1.8;margin:0 0 20px;max-width:340px;color:#463721}
+.reference-reader .case-hero>span{display:none}
+.reference-reader .reference-tags{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0 40px}
+.reference-tags span{font-size:10px;padding:6px 10px;background:#4637210c;border-radius:20px;color:#463721}
+.reference-reader .case-toc{position:static;padding:0;margin:0;border:0;display:flex;flex-wrap:wrap;gap:7px;background:none}
+.reference-reader .case-toc small{display:none}
+.reference-reader .case-toc button{width:auto;margin:0;padding:6px 9px;background:transparent;border:1px solid #46372120;color:#786950;font-size:10px}
+.reference-reader .case-toc button.active{background:#463721;color:#f8f8f0}
+.reference-reader .case-toc button:before{display:none}
+.reference-reader .case-main{padding:12px 76px 40px 0;min-width:0}
+.reference-reader .case-main>section{margin:0 0 36px;padding:0;min-height:0!important}
+.reference-reader .heritage-figure{margin:0 0 32px;padding:0;background:transparent;border:0}
+.reference-reader .heritage-figure a{display:block;overflow:hidden;background:transparent;cursor:zoom-in}
+.reference-reader .heritage-figure img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;transition:filter .3s}
+.reference-reader .heritage-figure a:hover img{filter:brightness(1.025)}
+.reference-reader .heritage-figure figcaption{font-size:11px;line-height:1.6;color:#786950;margin-top:10px}
+.reference-reader .reference-notes{border-top:1px solid #46372122;padding:15px 0;margin:0 0 28px;color:#463721}
+.reference-notes summary{cursor:pointer;font-size:13px}.reference-reader .reference-notes p{font-size:14px;line-height:1.85;color:#624c3d}
+.reference-reader .reference-notes h2{font-size:22px;color:#463721}.reference-reader .reference-notes h3{font-size:18px}
+.reference-reader .reference-close{position:absolute;right:17px;top:18px;z-index:5;width:36px;height:36px;padding:0;border:0;background:#463721;color:#f8f8f0;font-size:24px;cursor:pointer;display:grid;place-items:center;transition:transform .2s}
+.reference-reader .reference-close:hover{transform:rotate(90deg)}
+.reference-reader .case-next{display:flex;gap:12px;margin:32px 0 0;padding:20px 0;border-top:1px solid #46372122;background:none}
+.reference-reader .case-next button{flex:1;min-width:0;padding:16px;background:#4637210a;color:#463721}.reference-reader .case-next strong{font-size:15px}
+@media(max-width:800px){
+ #object-story .os-stage{min-height:480px}#object-story .fan-rule{top:95px}#object-story .circular-ready .fan-caption{left:14px;right:14px;bottom:16px}#object-story .circular-ready .fan-caption h2{font-size:14px}
+ body .project-reader.reference-reader{width:calc(100vw - 20px);height:calc(100svh - 20px)}
+ .reference-reader .case-layout{display:block}.reference-reader .reference-info{position:relative;max-height:none;padding:28px 56px 24px 22px;overflow:visible}
+ .reference-reader .case-hero h1{font-size:30px;margin-bottom:16px}.reference-reader .case-hero p{max-width:none;font-size:13px}.reference-reader .reference-summary{display:none}
+ .reference-reader .reference-tags{margin:18px 0}.reference-reader .case-main{padding:0 16px 24px}.reference-reader .reference-close{top:16px;right:13px}
+}
+@media(prefers-reduced-motion:reduce){.reference-reader *{transition:none!important}}
+body .project-reader.reference-reader{animation:none}
+.reference-reader .case-scroll{inset:0}
+.reference-reader .reference-notes .case-overview{display:block}
+.reference-reader .reference-notes .case-overview dl{display:none}

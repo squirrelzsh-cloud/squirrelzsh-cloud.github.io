@@ -1,0 +1,145 @@
+/* Final section refinements: preserve the existing scroll choreography while
+   giving the reading surfaces a softer, more editorial finish. */
+#design-intro,
+#design-intro .intro-stage {
+  border-radius: 0 0 40px 40px;
+}
+#design-intro .intro-stage {
+  overflow: hidden;
+}
+
+/* Give the resume enough vertical breathing room for a complete read without
+   inventing new facts or changing its content. */
+#approach.designer-resume {
+  min-height: 132svh;
+  padding-top: clamp(108px, 10vw, 156px);
+  padding-bottom: clamp(96px, 9vw, 144px);
+}
+#approach.designer-resume .designer-layout {
+  padding-top: clamp(52px, 6vw, 88px);
+  gap: clamp(48px, 8vw, 132px);
+}
+#approach.designer-resume .designer-details > section {
+  padding-bottom: clamp(30px, 3vw, 46px);
+  margin-bottom: clamp(30px, 3vw, 46px);
+}
+#approach.designer-resume .designer-project {
+  margin-top: clamp(26px, 2.4vw, 38px);
+}
+
+/* The desk photograph should sit directly on the cream page and read as one
+   continuous rounded image surface. */
+#about-space,
+#about-space .environment-stage {
+  background: #f8f8f0 !important;
+}
+#about-space .environment-depth {
+  background: transparent !important;
+  border-radius: 40px;
+  overflow: hidden;
+}
+#about-space .environment-back {
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  #design-intro,
+  #design-intro .intro-stage {
+    border-radius: 0 0 28px 28px;
+  }
+  #approach.designer-resume {
+    min-height: auto;
+    padding-top: 96px;
+    padding-bottom: 76px;
+  }
+  #approach.designer-resume .designer-layout {
+    padding-top: 38px;
+    gap: 52px;
+  }
+  #about-space .environment-depth,
+  #about-space .environment-back {
+    border-radius: 28px;
+  }
+}
+
+/* Keep the intro stage as the only colored surface; the long scroll wrapper
+   stays transparent so no second color layer peeks out beneath it. */
+#design-intro {
+  background: transparent !important;
+}
+#design-intro .intro-stage {
+  background: #f8f8f0 !important;
+  box-shadow: 0 18px 42px rgba(70,55,33,.08);
+}
+
+/* The brown practice field continues behind the rounded cream intro surface. */
+#design-intro {
+  background: #2c190f !important;
+}
+
+/* A consistent vertical rhythm for the portfolio showcase. */
+html body .reference-showcase {
+  padding-top: clamp(128px, 10vw, 176px) !important;
+  padding-bottom: clamp(100px, 8vw, 144px) !important;
+}
+html body .reference-showcase .rs-heading {
+  margin-bottom: clamp(64px, 6vw, 96px);
+}
+html body .reference-showcase .rs-skill-row {
+  min-height: 176px;
+  height: 176px;
+}
+html body .reference-showcase .rs-skill-row.has-active {
+  height: 270px;
+}
+html body .reference-showcase .rs-project-heading {
+  margin-top: clamp(132px, 10vw, 176px);
+  margin-bottom: clamp(54px, 5vw, 76px);
+}
+html body .reference-showcase .rs-project {
+  min-height: 410px;
+}
+html body .reference-showcase .rs-image {
+  min-height: 410px;
+}
+html body .reference-showcase .rs-copy {
+  padding: 48px 52px;
+}
+
+@media (max-width: 800px) {
+  #design-intro {
+    background: #2c190f !important;
+  }
+  html body .reference-showcase {
+    padding-top: 88px !important;
+    padding-bottom: 72px !important;
+  }
+  html body .reference-showcase .rs-heading {
+    margin-bottom: 46px;
+  }
+  html body .reference-showcase .rs-skill-row {
+    min-height: 148px;
+    height: 148px;
+  }
+  html body .reference-showcase .rs-skill-row.has-active {
+    height: 250px;
+  }
+  html body .reference-showcase .rs-project-heading {
+    margin-top: 92px;
+    margin-bottom: 46px;
+  }
+  html body .reference-showcase .rs-project,
+  html body .reference-showcase .rs-image {
+    min-height: 330px;
+  }
+  html body .reference-showcase .rs-copy {
+    padding: 32px 28px;
+  }
+}
+
+/* Removed journal switch page: keep only the preceding desk photograph. */
+#about-space.environment-scroll{height:100svh!important}
+#about-space .environment-stage{position:relative}
+#about-space .environment-depth{transform:none!important}
+@media(prefers-reduced-motion:reduce){#about-space .environment-depth{display:block}}

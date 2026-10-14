@@ -1,0 +1,9 @@
+.studio-heading .home-actions .wechat-trigger{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:32px;padding:6px 17px;border:1px solid #46372130;border-radius:30px;color:#463721;background:transparent;font:inherit;font-size:12px;white-space:nowrap;cursor:pointer}
+.studio-heading .home-actions .wechat-trigger span{font-size:20px}
+.studio-heading .home-actions .wechat-trigger:hover,.studio-heading .home-actions .wechat-trigger[aria-expanded="true"]{background:#e8eadd;border-color:#463721}
+.wechat-contact{position:fixed;z-index:100000;width:216px;padding:12px 12px 10px;box-sizing:border-box;border-radius:18px;background:#fff;color:#463721;box-shadow:0 14px 44px #46372129;font-family:"Studio Sans",sans-serif;text-align:center}
+.wechat-contact[hidden]{display:none}
+.wechat-contact:after{content:"";position:absolute;top:100%;left:var(--arrow-left,50%);transform:translateX(-50%);border:9px solid transparent;border-top-color:#fff;border-bottom:0}
+.wechat-code{width:192px;height:192px;overflow:hidden;background:white;margin:auto}
+.wechat-code img{display:block;width:263.11px;height:335.11px;max-width:none;transform:translate(-35.56px,-85.33px)}
+.wechat-contact p{margin:7px 0 0;font-size:13px;line-height:20px;color:#75685f}

@@ -1,0 +1,46 @@
+name: Publish Xiaohao Portfolio
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Import original portfolio on first publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ ! -f site/index.html ]; then
+            gh release download v1.0.0 --repo "$GITHUB_REPOSITORY" --pattern xiaohao-portfolio-site.zip --dir "$RUNNER_TEMP"
+            echo "a033c4afa56f933c51259b616a4c252e464e90683e167229a9a4ae00fd0064a7  $RUNNER_TEMP/xiaohao-portfolio-site.zip" | sha256sum --check
+            mkdir -p site
+            unzip -q "$RUNNER_TEMP/xiaohao-portfolio-site.zip" -d site
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add site
+            git commit -m "Import complete Xiaohao portfolio source and assets"
+            git push origin HEAD:main
+          fi
+      - name: Validate static entry point
+        run: |
+          test -s site/index.html
+          find site -name '*.js' -not -path '*/vendor/*' -exec node --check {} \;
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4

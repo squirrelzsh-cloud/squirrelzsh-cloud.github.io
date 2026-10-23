@@ -23,11 +23,10 @@
  const buttons=[...section.querySelectorAll('.rs-skill')];
  function activate(button){buttons.forEach(b=>{const active=b===button;b.classList.toggle('is-active',active);b.setAttribute('aria-expanded',String(active));b.closest('.rs-skill-row').classList.toggle('has-active',!!button&&b.closest('.rs-skill-row')===button.closest('.rs-skill-row'));});}
  buttons.forEach(button=>{
- button.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')activate(button);});
- button.addEventListener('focus',()=>{if(button.matches(':focus-visible'))activate(button);});
- button.addEventListener('click',e=>{if(e.detail!==0)activate(button.classList.contains('is-active')&&e.pointerType!=='mouse'?null:button);});
+ // One activation per click (including touch, Enter and Space).
+ // Focus and pointer entry must not open the item before the click arrives.
+ button.addEventListener('click',()=>activate(button.classList.contains('is-active')?null:button));
  });
- section.querySelector('.rs-skills').addEventListener('pointerleave',()=>{if(!section.querySelector('.rs-skill:focus-visible'))activate(null);});
  const list=section.querySelector('.rs-projects');
  list.id='selected-work';
  const route=()=>{if(['#selected-work','#gateway'].includes(location.hash))requestAnimationFrame(()=>list.scrollIntoView({block:'start',behavior:'instant'}));};

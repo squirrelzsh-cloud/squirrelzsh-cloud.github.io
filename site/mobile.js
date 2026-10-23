@@ -18,3 +18,33 @@
  render();
  }
 })();
+
+// Use the same vector family on iOS and desktop; never render arrow emoji.
+(()=>{
+ const paths={
+  '↗':'M6 18 18 6M6 6h12v12',
+  '↓':'M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5',
+  '↑':'M12 20V4m-6 6 6-6 6 6',
+  '→':'M4 12h16m-6-6 6 6-6 6'
+ };
+ const ns='http://www.w3.org/2000/svg';
+ function update(root){
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[];
+  while(walker.nextNode()){
+   const n=walker.currentNode,p=n.parentElement;
+   if(p&&!p.closest('svg,script,style,textarea')&&p.closest('a,button,.rs-cta,.studio-footer')&&/[↗↓↑→]/u.test(n.textContent))nodes.push(n);
+  }
+  nodes.forEach(n=>{
+   const fragment=document.createDocumentFragment();
+   n.textContent.split(/([↗↓↑→][\uFE0E\uFE0F]?)/u).forEach(part=>{
+    const d=paths[part[0]];
+    if(!d){fragment.append(document.createTextNode(part));return}
+    const svg=document.createElementNS(ns,'svg'),path=document.createElementNS(ns,'path');
+    svg.classList.add('ui-action-icon');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');path.setAttribute('d',d);svg.append(path);fragment.append(svg);
+   });
+   n.replaceWith(fragment);
+  });
+ }
+ update(document.body);
+ new MutationObserver(records=>{for(const r of records)for(const n of r.addedNodes)if(n.nodeType===1&&!n.matches('svg,.ui-action-icon'))update(n)}).observe(document.body,{childList:true,subtree:true});
+})();

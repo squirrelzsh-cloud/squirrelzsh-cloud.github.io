@@ -23,9 +23,14 @@
  html body .reference-showcase .rs-skill{min-height:140px}
  html body .reference-showcase .rs-skill-row.has-active .rs-skill{min-height:240px}
  html body .reference-showcase .rs-project{grid-template-columns:1fr;min-height:0}
- html body .reference-showcase .rs-image{min-height:0;aspect-ratio:4/3}
- html body .reference-showcase .rs-image img{height:100%;object-fit:contain}
- html body .reference-showcase .rs-copy{padding:28px 24px;gap:0}
+ html body .reference-showcase .rs-image{min-height:0;aspect-ratio:auto;background:transparent;border-radius:20px!important}
+ html body .reference-showcase .rs-image img{width:100%;height:auto;object-fit:contain;transform:none!important}
+ html body .reference-showcase .rs-copy{padding:24px 20px 20px;gap:0;min-width:0}
+ html body .reference-showcase .rs-tag{margin:0 0 14px;font-size:12px;line-height:1.6}
+ html body .reference-showcase .rs-copy h3{margin:0 0 16px}
+ html body .reference-showcase .rs-project-description{margin:0 0 24px;max-width:none;font-size:16px;line-height:1.75}
+ html body .reference-showcase .rs-cta{width:100%;box-sizing:border-box;justify-content:space-between;min-height:48px;padding:12px 16px;margin:0;font-size:16px}
+ html body .reference-showcase .rs-projects{gap:20px}
  html body .reference-showcase .rs-copy h3{font-size:28px;line-height:1.35;overflow-wrap:anywhere}
  .rs-project-description{font-size:16px;line-height:1.75}
  .rs-projects.has-active .rs-project:not(.is-active){opacity:1}
@@ -72,4 +77,43 @@
  .studio-heading .home-identity h1{font-size:32px}.studio-heading .home-description{display:none}
  .studio-heading .home-actions{grid-column:2!important;grid-row:2/4!important;margin:0}
  .studio-heading .home-identity h2{font-size:14px}
+}
+
+/* Unified edges, vector icons and readable navigation. */
+html body :is(.project-reader,.project-reader.reference-reader,.case-scroll,.reference-info,.case-layout,.case-hero,.case-focus,.case-reflection,.ce-facts>div,.case-overview,.case-overview dl,.case-flow li,.case-next,.designer-sheet,.designer-status,.designer-tags span,.reference-tags span,.cursor-grid-card,.intro-stage,.intro-device,.editorial-hero,.os-media,.studio-stage,.contact-popover,.wechat-contact){border-radius:var(--ui-radius,20px)!important}
+html body .project-reader.reference-reader{outline:none!important;overflow:hidden!important;clip-path:inset(0 round 20px);isolation:isolate}
+html body .project-reader.reference-reader .case-scroll{border-radius:inherit!important;clip-path:inset(0 round 20px)}
+html body :is(.intro-stage,.intro-device,.editorial-hero,.studio-stage){overflow:hidden}
+html body .ui-action-icon{display:inline-block!important;width:20px;height:20px;min-width:20px;vertical-align:middle;flex:0 0 20px;fill:none!important;stroke:currentColor!important;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible;pointer-events:none}
+html body .studio-footer .ui-action-icon{width:16px;height:16px;min-width:16px;flex-basis:16px}
+html body .studio-footer a{display:inline-flex;align-items:center;justify-content:flex-end;gap:8px}
+html body nav.nav{--nav-panel:#FCF8F1}
+html body nav.nav[data-tone="dark"]{--nav-ink:#2C190F;--nav-panel:#FCF8F1}
+html body nav.nav[data-tone="light"]{--nav-ink:#FCF8F1;--nav-panel:#2C190F}
+html body nav.nav .top-links a,
+html body nav.nav.nav-expanded .top-links a,
+html body nav.nav.nav-expanded .top-links a.gooey-selected{color:var(--nav-ink)!important;opacity:1!important}
+@media(max-width:800px){
+ /* User sketch: one uninterrupted image column LEFT, all copy RIGHT. */
+ html body .reference-showcase .rs-project{aspect-ratio:16/9;width:100%;height:auto;min-height:0!important;grid-template-columns:minmax(0,44fr) minmax(0,56fr);grid-template-rows:minmax(0,1fr);box-sizing:border-box;align-items:stretch}
+ html body .reference-showcase .rs-image{height:100%;min-height:0!important;border-radius:20px!important;background:transparent;padding:0;box-sizing:border-box;display:block}
+ html body .reference-showcase .rs-image img{width:100%;height:100%;max-height:100%;object-fit:cover;object-position:72% center;transform:none!important;border-radius:20px!important}
+ html body .reference-showcase .rs-copy{padding:clamp(10px,2.7vw,20px);min-height:0;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:6px}
+ html body .reference-showcase .rs-tag{display:none}
+ html body .reference-showcase .rs-copy h3{font-size:clamp(16px,4.3vw,29px);line-height:1.15;margin:0;letter-spacing:-.035em;padding:0}
+ html body .reference-showcase .rs-project-description{font-size:clamp(11px,2.7vw,18px);line-height:1.4;margin:0;overflow-wrap:anywhere}
+ html body .reference-showcase .rs-cta{font-size:clamp(11px,2.6vw,17px);line-height:1.3;padding:6px 9px;min-height:32px;gap:6px;width:100%;margin:0;align-self:stretch}
+ html body .reference-showcase .rs-cta .ui-action-icon{width:16px;height:16px;min-width:16px;flex-basis:16px}
+ /* Expanded links have a solid, contrast-aware surface of their own. */
+ html body nav.nav.nav-expanded{background:var(--nav-panel)!important;color:var(--nav-ink)!important;box-shadow:0 8px 24px #0002!important;border-radius:0 0 20px 20px!important;padding-bottom:14px}
+ html body nav.nav.nav-expanded .top-links{position:relative;isolation:isolate;background:var(--nav-panel)!important;border-radius:20px;padding:6px 0;box-sizing:border-box;min-height:54px}
+ html body nav.nav.nav-expanded .top-links>a{position:relative;z-index:2;font-size:14px;min-height:44px;padding:8px 10px!important;box-sizing:border-box}
+ html body nav.nav.nav-expanded .gooey-effect{z-index:1;pointer-events:none}
+ html body nav.nav .gooey-pill{border-color:var(--nav-ink)!important}
+}
+@media(max-width:360px){
+ html body .reference-showcase .rs-copy{padding:8px;gap:4px}
+ html body .reference-showcase .rs-copy h3{font-size:14px}
+ html body .reference-showcase .rs-project-description{font-size:10px;line-height:1.35}
+ html body .reference-showcase .rs-cta{min-height:28px;padding:5px 7px;font-size:10px}
 }

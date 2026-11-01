@@ -1,5 +1,5 @@
 html.portfolio-loading,html.portfolio-loading body{overflow:hidden!important}
-#site-loader{position:fixed;inset:0;z-index:2147483646;background:#463721;color:#f8f8f0;display:grid;place-items:center;pointer-events:auto;transition:background-color .75s ease,color .75s ease,opacity 1s ease;isolation:isolate}
+#site-loader{position:fixed;inset:0;z-index:2147483646;background:#f8f8f0;color:#463721;display:grid;place-items:center;pointer-events:auto;transition:opacity 1s ease;isolation:isolate}
 #site-loader .loader-signature{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(20px,2vw,30px);font-weight:500;letter-spacing:-.055em;white-space:nowrap;transition:opacity .45s ease}
 #site-loader .loader-signature:after{content:'';display:block;margin:12px auto 0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;animation:loader-sign 1s ease forwards;opacity:.45}
 #site-loader .loader-center{position:relative;display:grid;place-items:center;opacity:0;transition:opacity .7s ease .35s}

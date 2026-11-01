@@ -1,0 +1,20 @@
+/* Content-only refinement. Animated wrappers retain their original geometry. */
+.intro-card p{max-width:22em;text-wrap:pretty}
+.os-copy h2{text-wrap:balance;line-height:1.2;letter-spacing:-.025em}
+.os-copy p{line-height:1.85;text-wrap:pretty}
+.os-copy small{letter-spacing:.08em}
+.os-media figcaption{left:8%;right:8%;bottom:7%}
+.os-media h3{font-size:clamp(1.85rem,3.3vw,3rem);line-height:1.18;margin:12px 0}
+.os-media small{display:block;line-height:1.6;letter-spacing:.045em}
+.os-media p{margin:0 0 18px;line-height:1.7;max-width:23em}
+.os-media button{padding:11px 18px}
+.os-poster-title{font-size:clamp(2.6rem,7.2vw,7.5rem);max-width:86%;text-wrap:balance;letter-spacing:-.035em}
+.designer-summary{max-width:30em}.designer-details p{max-width:42em}
+.editorial-title h2{letter-spacing:-.03em}.editorial-columns p{text-wrap:pretty}
+.idea-response{position:absolute;inset:0;z-index:6;pointer-events:none}
+.idea-trigger{position:absolute;left:6%;bottom:15%;z-index:12;min-height:44px;padding:10px 16px;border:1px solid #f2e7d270;border-radius:12px;background:#17241caa;color:#f2e7d2;font:14px var(--font-body);cursor:pointer}
+.idea-trigger:hover{background:#f2e7d2;color:#17241c}.idea-trigger:focus-visible{outline:2px solid #d18a51;outline-offset:5px}
+.idea-trigger[hidden]{display:none}
+.os-portrait small{max-width:85%;line-height:1.6;background:#17241caa;padding:5px 8px}
+@media(max-width:700px){.os-media h3{font-size:1.85rem}.os-media p{font-size:1rem}.idea-trigger{bottom:12%;font-size:14px}.os-copy small{font-size:12px}.os-poster-title{font-size:clamp(2.2rem,8vw,4rem)}}
+@media(prefers-reduced-motion:reduce){.idea-response,.idea-trigger{display:none!important}}

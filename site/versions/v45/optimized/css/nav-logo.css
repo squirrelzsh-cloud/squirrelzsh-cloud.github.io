@@ -1,0 +1,14 @@
+.logo-mark{width:2.8rem;height:2.8rem;display:block}
+.logo-mark svg{width:100%;height:100%;overflow:visible}
+.logo-mark circle,.logo-mark ellipse{fill:none;stroke:currentColor;stroke-width:1.5}
+.logo-mark ellipse{stroke:#b8f054}
+.logo-mark path{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.top-links{display:flex;align-items:center;gap:clamp(1.2rem,2.6vw,3rem);margin-left:auto;margin-right:2rem}
+.top-links a{font-size:.7rem;text-decoration:none;letter-spacing:.1em;position:relative;padding:.8rem 0}
+.top-links a:after{content:"";position:absolute;left:0;right:100%;bottom:.45rem;height:1px;background:#b8f054;transition:right .3s}
+.top-links a:hover:after{right:0}
+.nav .menu-button{display:none}
+.hero-universe .universe-title{z-index:20;top:6.5rem;font-size:clamp(1.9rem,3.5vw,4rem);line-height:.9;white-space:normal}
+.hero-universe .universe-title span{display:block}
+.hero-universe .intro-card{border-radius:0}
+@media(max-width:800px){.top-links{display:none}.nav .menu-button{display:block}.logo-mark{width:2.55rem;height:2.55rem}.hero-universe .universe-title{top:6.2rem;left:1.5rem;font-size:9vw}}

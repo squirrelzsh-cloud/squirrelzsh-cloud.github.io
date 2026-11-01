@@ -1,0 +1,31 @@
+/* New character layer follows the original room expansion, never replacing its renderer. */
+@font-face{font-family:Lift Condensed;src:url('../assets/fonts/khand-bold.woff2') format('woff2');font-weight:700;font-display:swap}
+html body #studio-opening .studio-stage>canvas{position:absolute;inset:0;z-index:3}
+html body #studio-opening .studio-heading{z-index:1}
+.lift-person,.lift-hand,.lift-wordmark{position:absolute;pointer-events:none;user-select:none;opacity:0}
+.lift-person{left:0;top:0;width:100%;overflow:hidden;z-index:2}
+.lift-person img,.lift-hand img{position:absolute;display:block;max-width:none;pointer-events:none;border-radius:0!important}
+.lift-hand{inset:0;z-index:4}
+.lift-wordmark{top:7%;left:0;width:100%;text-align:center;z-index:1;line-height:1;color:#463721}
+html body #studio-opening .lift-wordmark span{font-family:Lift Condensed,Impact,'Arial Narrow',sans-serif!important;font-size:clamp(80px,19vw,300px);font-weight:700;letter-spacing:-.035em;line-height:.95}
+html body #studio-opening .studio-stage.lift-active .studio-heading{opacity:0!important;pointer-events:none!important}
+html body #studio-opening .studio-footer{z-index:5}
+/* The independently positioned window uses the existing device timeline. */
+html body #design-intro .intro-window{width:clamp(280px,38vw,570px);max-width:none;filter:drop-shadow(0 12px 14px #46372118);overflow:visible;border-radius:0!important}
+html body #design-intro .intro-window .intro-device-crop{aspect-ratio:1576/998;overflow:visible}
+html body #design-intro .intro-window img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain;border-radius:0!important}
+@media(max-width:800px){
+ html body #design-intro .intro-window{width:min(88vw,440px)}
+ .lift-wordmark{top:14%}
+ html body #studio-opening .lift-wordmark span{font-size:22vw}
+}
+@media(max-height:559px){html body #design-intro .intro-window{width:38vw}}
+/* Static fallback still supports the same opening lift when WebGL is unavailable. */
+html body #studio-opening.studio-fallback{height:220svh}
+html body #studio-opening.studio-fallback .studio-stage{position:sticky;top:0}
+html body #studio-opening.studio-fallback .studio-stage:before{inset:var(--scene-top) var(--scene-edge) var(--scene-bottom);z-index:3;pointer-events:none}
+html body #studio-opening.studio-fallback .studio-heading{opacity:var(--fallback-heading,1)!important}
+html body #studio-opening.studio-fallback .studio-stage.lift-active .studio-heading{opacity:0!important}
+@media(prefers-reduced-motion:reduce){.lift-person,.lift-hand,.lift-wordmark{display:none!important}html body #studio-opening .studio-stage.lift-active .studio-heading{opacity:1!important}}
+/* Only the outer finger layers cross the live canvas; hide the source image's inner grips. */
+.lift-person img{clip-path:inset(0 13% 0 13%)}

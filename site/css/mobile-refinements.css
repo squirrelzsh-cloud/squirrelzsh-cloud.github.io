@@ -117,3 +117,71 @@ html body nav.nav.nav-expanded .top-links a.gooey-selected{color:var(--nav-ink)!
  html body .reference-showcase .rs-project-description{font-size:10px;line-height:1.35}
  html body .reference-showcase .rs-cta{min-height:28px;padding:5px 7px;font-size:10px}
 }
+
+/* Page backgrounds have square edges; content cards keep their own radius. */
+html body main > section,
+html body :is(.studio-stage,.intro-stage,.designer-sheet,.environment-stage,.environment-depth,.environment-back,.object-stage,.os-stage,.reference-showcase,.about-journey,.editorial-stage){
+ border-radius:0!important;
+}
+html body #design-intro,
+html body #design-intro .intro-stage,
+html body #about-space .environment-depth,
+html body #about-space .environment-back{border-radius:0!important}
+html body .studio-stage{--scene-radius:0px!important}
+html body .studio-stage canvas{border-radius:0!important}
+html body .studio-fallback .studio-stage:before{border-radius:0!important}
+html body #studio-opening .studio-stage{border-radius:0!important}
+html body #design-intro .intro-beat{opacity:0}
+html body #design-intro .intro-device{visibility:hidden}
+
+/* Square page canvas, including the root wrappers and page pseudo-surfaces. */
+html,html body,html body main,html body .editorial-page,
+html body .studio-opening,html body .intro-opening,
+html body main>section::before,html body main>section::after{
+ border-radius:0!important;clip-path:none!important;
+}
+@media(min-width:801px){
+ html body #design-intro .intro-device{width:38vw;max-width:620px}
+ html body #design-intro .intro-beat{width:42vw;top:32%}
+ html body #design-intro .intro-beat-one,html body #design-intro .intro-beat-three{left:5vw;right:auto}
+ html body #design-intro .intro-beat-two{right:5vw;left:auto}
+ html body #design-intro .intro-beat h2{font-size:clamp(28px,3.1vw,52px)}
+}
+@media(max-width:800px){
+ html body #design-intro .intro-beat{top:16%;width:calc(100% - 40px);left:20px!important}
+ html body #design-intro .intro-device{width:min(76vw,520px)}
+ html body #design-intro .intro-beat h2{font-size:clamp(24px,6.6vw,38px)}
+ html body #design-intro .intro-beat p{margin:16px 0;font-size:15px;line-height:1.7}
+}
+html body .rs-capability-intro{font-size:18px;line-height:1.8;color:#dfd1c3;margin-top:24px}
+html body .rs-skill.is-active .rs-description{font-size:16px;line-height:1.8}
+html body .reference-showcase .rs-skill-row.has-active{height:340px}
+html body #approach .designer-row{flex-wrap:wrap}
+html body #approach .designer-details p{line-height:1.9}
+html body #approach .designer-details>section{overflow:visible}
+html body .feedback-section{padding:48px 0 80px;color:#463721}
+html body .feedback-heading{display:flex;justify-content:space-between;align-items:end;gap:28px;padding:48px 0 28px}
+html body .feedback-heading h3{font-size:clamp(32px,4.5vw,64px);margin:0;line-height:1.2}
+html body .feedback-heading p{max-width:25em;font-size:16px;line-height:1.8}
+html body .feedback-track{--feedback-card-width:clamp(280px,38vw,460px);position:relative;display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:4px 0 0;overscroll-behavior-x:contain;scroll-behavior:auto}
+html body .feedback-track::-webkit-scrollbar{display:none}
+html body .feedback-group{display:flex;flex:0 0 auto;gap:20px}
+html body .feedback-track:focus-visible{outline:2px solid #9c8048;outline-offset:6px}
+html body .feedback-card{flex:0 0 var(--feedback-card-width);width:var(--feedback-card-width);text-align:left;padding:32px;background:#ece7da;color:#463721;border:0;min-height:260px;cursor:pointer;white-space:normal}
+html body .feedback-card span,html body .feedback-card small{font-size:14px;color:#786950}
+html body .feedback-card h4{font-size:24px;margin:30px 0 16px}
+html body .feedback-card p{font-size:18px;line-height:1.8}
+html body .feedback-hint{font-size:14px!important;color:#786950!important}
+@media(max-width:800px){
+ html body .reference-showcase .rs-skill-row.has-active{height:auto}
+ html body .reference-showcase .rs-skill-row{display:grid;grid-template-columns:minmax(0,1fr)}
+ html body .reference-showcase .rs-skill-row.has-active .rs-skill{min-height:140px}
+ html body .reference-showcase .rs-skill-row.has-active .rs-skill.is-active{min-height:270px}
+ html body .reference-showcase .rs-skill .rs-description{display:none}
+ html body .reference-showcase .rs-skill.is-active .rs-description{display:block;position:relative;inset:auto;margin:70px 28px 12px 0}
+ html body .rs-skill.is-active{min-height:270px}
+ html body .rs-skill.is-active .rs-description{font-size:15px;line-height:1.75;right:48px}
+ html body .feedback-heading{display:block}
+ html body .feedback-track{--feedback-card-width:min(78vw,360px)}
+ html body .feedback-card{padding:24px}
+}

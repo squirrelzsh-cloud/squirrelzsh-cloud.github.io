@@ -1,0 +1,104 @@
+/* V30 — Home → Directory: continuous spiral film gallery */
+.hero-universe{height:540svh}
+.realistic-directory{
+  --dir-x:0;--dir-y:0;
+  overflow:hidden;perspective:1800px;
+  background:#101817;color:#f7eddb;
+}
+.realistic-directory:before{
+  filter:saturate(.55) brightness(.28) contrast(1.15) blur(1.2px);
+  transform:scale(1.25) translate(calc(var(--dir-x) * -.55rem),calc(var(--dir-y) * -.35rem));
+}
+.realistic-directory:after{
+  background:
+    radial-gradient(ellipse at 50% 53%,transparent 0 20%,#07100e80 66%,#050909d9 100%),
+    linear-gradient(145deg,#18362c9c 0,#0b10178f 48%,#27335699 100%);
+}
+.realistic-directory .note-heading{top:7.2vh;left:5vw;width:90vw;text-align:left;color:#f7eddb}
+.realistic-directory .note-heading>span{color:#dfb66e}
+.realistic-directory .note-heading h2{font:500 clamp(3.7rem,6.8vw,7.8rem)/.84 Georgia,"Songti SC",serif;letter-spacing:-.065em;margin:.7rem 0 .55rem}
+.realistic-directory .note-heading p{color:#f7eddb9c;font-size:.72rem;letter-spacing:.17em}
+
+.realistic-directory .sticky-note-board{
+  position:absolute;left:50%;top:59%;width:112vw;height:68vh;
+  transform:translate(-50%,-50%) perspective(1800px) rotateX(-3.5deg) rotateZ(-1deg);
+  transform-style:preserve-3d;touch-action:pan-y;cursor:grab;transition:none;z-index:5;
+}
+.realistic-directory .sticky-note-board.is-dragging{cursor:grabbing}
+.realistic-directory .sticky-note-board:focus-visible{outline:1px solid #f7eddb7d;outline-offset:-1rem}
+.realistic-directory .sticky-note-board:before,
+.realistic-directory .sticky-note-board:after{
+  content:"";position:absolute;left:50%;top:50%;pointer-events:none;border-radius:50%;
+}
+.realistic-directory .sticky-note-board:before{
+  width:134vw;height:52vh;border-top:2.15rem solid #050708;border-bottom:2.15rem solid #050708;
+  box-shadow:0 -1px #d8bd8d38 inset,0 1px #77a7cf2e inset;
+  transform:translate(-50%,-42%) rotateX(66deg) rotateZ(-5deg);
+  opacity:.72;filter:drop-shadow(0 2.7rem 2.4rem #020404c9);
+}
+.realistic-directory .sticky-note-board:after{
+  width:127vw;height:41vh;border-top:1px solid #e4cc9d4f;border-bottom:1px solid #79a9d34a;
+  transform:translate(-50%,-43%) rotateX(66deg) rotateZ(-5deg);opacity:.7;
+}
+
+.realistic-directory .desk-note{
+  --card-x:0px;--card-y:0px;--card-z:0px;--card-ry:0deg;--card-rz:0deg;
+  --card-scale:1;--card-blur:0px;--card-light:1;--card-alpha:1;
+  position:absolute!important;left:50%!important;top:50%!important;
+  width:clamp(19rem,34vw,34rem)!important;height:clamp(13rem,23vw,23rem)!important;
+  aspect-ratio:auto!important;padding:3.25rem 2rem!important;
+  display:flex!important;flex-direction:column;align-items:center;justify-content:center;
+  color:#f7eddb!important;text-decoration:none;background:#050708!important;
+  border:1px solid #bbc9d037!important;border-radius:8px!important;
+  box-shadow:0 3.2rem 6.5rem #010202c4!important;
+  filter:blur(var(--card-blur)) brightness(var(--card-light)) saturate(.92)!important;
+  opacity:var(--card-alpha);
+  transform:translate(-50%,-50%) translate3d(var(--card-x),var(--card-y),var(--card-z)) rotateY(var(--card-ry)) rotateZ(var(--card-rz)) scale(var(--card-scale))!important;
+  transform-origin:center!important;transform-style:preserve-3d;
+  animation:none!important;transition:filter .25s,opacity .25s,box-shadow .35s,border-color .35s;
+  overflow:hidden;isolation:isolate;will-change:transform,filter,opacity;
+}
+.realistic-directory .desk-note:before{
+  display:block!important;content:"";position:absolute;z-index:-2;
+  inset:2rem 0;background:linear-gradient(145deg,#ffffff1d,transparent 38%,#0008),var(--card-art);
+  opacity:.95;border-top:1px solid #fff2;border-bottom:1px solid #000b;
+}
+.realistic-directory .desk-note:after{
+  display:block!important;content:"";position:absolute;z-index:-1;inset:0;width:auto;height:auto;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 13px,#d9c89b 13px 23px,transparent 23px 35px) 0 .72rem/100% .66rem no-repeat,
+    repeating-linear-gradient(90deg,transparent 0 13px,#86a8ba 13px 23px,transparent 23px 35px) 0 calc(100% - .72rem)/100% .66rem no-repeat,
+    linear-gradient(180deg,#050708 0 2rem,transparent 2rem calc(100% - 2rem),#050708 calc(100% - 2rem));
+  clip-path:none;opacity:.78;animation:none!important;pointer-events:none;
+}
+.realistic-directory .desk-note-1{--card-art:linear-gradient(135deg,#bd8e60 0 34%,#315844 34% 68%,#e5d2ad 68%)}
+.realistic-directory .desk-note-2{--card-art:radial-gradient(circle at 67% 28%,#f2d796 0 7%,transparent 7.5%),linear-gradient(135deg,#1f4935 0 43%,#aecd70 43% 70%,#ead7b3 70%)}
+.realistic-directory .desk-note-3{--card-art:linear-gradient(155deg,#765139 0 30%,#d3a260 30% 53%,#264936 53%)}
+.realistic-directory .desk-note-4{--card-art:radial-gradient(circle at 30% 24%,#d7b16d 0 8%,transparent 8.5%),linear-gradient(145deg,#efe0c4 0 34%,#31573f 34% 72%,#a9764f 72%)}
+.realistic-directory .desk-note small,
+.realistic-directory .desk-note strong,
+.realistic-directory .desk-note em{
+  position:relative;z-index:3;color:#f7eddb;text-shadow:0 2px 1.2rem #000c;text-align:center;
+  font-family:Arial,"PingFang SC",sans-serif!important;
+}
+.realistic-directory .desk-note small{margin:0 0 1rem;font-size:.72rem;letter-spacing:.2em}
+.realistic-directory .desk-note strong{margin:0;font:500 clamp(2.5rem,4vw,4.6rem)/.9 Georgia,"Songti SC",serif!important;letter-spacing:-.06em}
+.realistic-directory .desk-note em{margin-top:.8rem;font-size:.68rem;letter-spacing:.17em;opacity:.75}
+.realistic-directory .desk-note>i{z-index:4;opacity:1;right:1.25rem;top:1rem;color:#f7eddb}
+.realistic-directory .desk-note.is-active{border-color:#f4ddb6bd!important;box-shadow:0 4rem 8rem #010202e0,0 0 0 1px #f7eddb24 inset!important}
+.realistic-directory .desk-note.is-active:before{opacity:1}
+.realistic-directory .desk-note:hover{filter:blur(0)!important brightness(1.08)!important saturate(1)!important}
+.realistic-directory .chapter-next{bottom:2rem}.realistic-directory .chapter-next span:before{content:"滚轮或拖动螺旋胶片 · ";opacity:.62}
+
+@media(max-width:800px){
+  .hero-universe{height:500svh}
+  .realistic-directory .note-heading{top:9vh;left:1.4rem}
+  .realistic-directory .note-heading h2{font-size:12.5vw}
+  .realistic-directory .sticky-note-board{top:59%;height:55vh;width:128vw}
+  .realistic-directory .desk-note{width:72vw!important;height:50vw!important;padding:2.6rem 1.2rem!important}
+  .realistic-directory .desk-note strong{font-size:9.5vw!important}
+  .realistic-directory .sticky-note-board:before{width:225vw}
+  .realistic-directory .sticky-note-board:after{width:214vw}
+  .realistic-directory .chapter-next span:before{content:"左右拖动 · "}
+}
+@media(prefers-reduced-motion:reduce){.realistic-directory .desk-note{filter:none!important;opacity:1!important}}

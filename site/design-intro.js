@@ -1,9 +1,61 @@
-(()=>{'use strict';const section=document.querySelector('#design-intro'),opening=section.querySelector('.intro-opening'),device=section.querySelector('.intro-device'),beats=[...section.querySelectorAll('.intro-beat')],reduce=matchMedia('(prefers-reduced-motion: reduce)');const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*(3-2*x)},phase=(p,a,b)=>ease((p-a)/(b-a));
-section.querySelectorAll('[data-ink]').forEach(el=>{for(const node of [...el.childNodes])if(node.nodeType===3){const f=document.createDocumentFragment();for(const ch of node.textContent){const s=document.createElement('span');s.textContent=ch;f.append(s)}node.replaceWith(f)}});
-const heads=[opening.querySelector('h2'),...beats.map(x=>x.querySelector('h2'))];const chars=heads.map(h=>[...h.querySelectorAll('span')]);
-function ink(i,t){chars[i].forEach((s,j)=>{const q=clamp(t*chars[i].length-j);s.style.setProperty('--ink-color',q>=1?'#49382b':q>0?'#a87542':'#d8c9b5')})}
-let frame=0;function paint(){frame=0;const rect=section.getBoundingClientRect(),p=.74*clamp(-(window.__sceneTop?.(rect)??rect.top)/(rect.height-(window.__portfolioHeight||innerHeight))),mobile=innerWidth<=800;document.documentElement.classList.toggle('intro-reading',rect.top<(window.__portfolioHeight||innerHeight)*.8&&rect.bottom>64);if(rect.bottom<0||rect.top>(window.__portfolioHeight||innerHeight))return;const depart=phase(p,.12,.22);opening.style.transform=`translateY(${-depart*110}%)`;ink(0,.25+.75*phase(p,0,.13));
-const keys=[[0,-110,20,-24,24,.65],[.20,-28,0,-12,24,1],[.40,29,0,8,-25,1],[.63,-29,0,0,0,1],[1,-29,0,0,0,1]];let i=0;while(i<keys.length-2&&p>keys[i+1][0])i++;const a=keys[i],b=keys[i+1],q=phase(p,a[0],b[0]),v=a.slice(1).map((x,j)=>x+(b[j+1]-x)*q);device.style.transform=`translate(-50%,-50%) translate(${mobile?0:v[0]}vw,${mobile?26+v[1]:v[1]}vh) rotateX(${reduce.matches?0:v[2]}deg) rotateY(${reduce.matches?0:v[3]}deg) scale(${v[4]})`;device.style.visibility=p<.13?'hidden':'visible';
-const ranges=[[.20,.38],[.40,.60],[.63,.80]];beats.forEach((el,j)=>{const [start,end]=ranges[j],entry=phase(p,start,start+.045),leave=phase(p,end-.035,end);el.style.opacity=entry*(1-leave);el.style.transform=`translateY(${reduce.matches?0:(1-entry)*24-leave*24}px)`;el.inert=p<start||p>end;ink(j+1,phase(p,start,start+.11));});
+import {clamp,prepareJourney} from './window-journey.mjs';
+const section=document.querySelector('#design-intro');
+if(section){
+ const content=section.querySelector('.intro-journey-content');
+ const viewport=section.querySelector('.intro-text-viewport');
+ const copy=section.querySelector('.intro-text-stream');
+ const device=section.querySelector('.intro-window'),image=device.querySelector('img');
+ const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ let geometry=null,frame=0,needsMeasure=true;
+ function measure(){
+  needsMeasure=false;
+  if(reduced.matches){geometry=null;return;}
+  const height=window.__portfolioHeight||innerHeight,width=content.clientWidth;
+  if(!width||!height)return;
+  section.style.setProperty('--intro-screen',height+'px');
+  const bottom=parseFloat(getComputedStyle(viewport).paddingBottom)||0;
+  const flowHeight=height+copy.offsetHeight+bottom;
+  const property=flowHeight+'px';
+  if(section.style.getPropertyValue('--intro-flow-height')!==property)section.style.setProperty('--intro-flow-height',property);
+  const next=document.getElementById('capabilities');
+  const nextPadding=next?parseFloat(getComputedStyle(next).paddingTop)||0:72;
+  const nav=document.querySelector('nav.nav');
+  const top=Math.max(64,nav?.getBoundingClientRect().bottom||0)+12;
+  const travel=Math.max(1,flowHeight+nextPadding-top);
+  const nextAreaEntry=clamp((flowHeight-height)/travel);
+  const windowFinish=Math.min(.48,Math.max(.2,nextAreaEntry-.08));
+  geometry={...prepareJourney({width,height,top:0,copyHeight:copy.offsetHeight,columnWidth:viewport.clientWidth,windowRatio:width<=800?.19:.11}),travel,windowFinish};
+  device.style.width=geometry.windowWidth+'px';
+  device.style.height=geometry.windowHeight+'px';
+ }
+ function paint(){
+  frame=0;
+  const rect=section.getBoundingClientRect(),height=window.__portfolioHeight||innerHeight;
+  document.documentElement.classList.toggle('intro-reading',rect.top<height*.8&&rect.bottom>64);
+  if(needsMeasure)measure();
+  if(reduced.matches){copy.style.transform='none';section.dataset.windowProgress='reduced';return;}
+  if(!geometry||rect.bottom<0||rect.top>height)return;
+  // Text and the following chapter share native flow, with no empty pinned tail.
+  const progress=clamp(-rect.top/geometry.travel);
+  const windowProgress=clamp(progress/geometry.windowFinish);
+  const point=geometry.route(.14+.86*windowProgress);
+  const exit=clamp((windowProgress-.9)/.1);
+  const rawX=point.x*geometry.width-geometry.windowWidth/2;
+  const x=rawX*(1-exit)+(-geometry.windowWidth-1)*exit;
+  const y=56+point.y*(geometry.height-56)-geometry.windowHeight/2;
+  device.style.transform=`translate3d(${x}px,${y}px,0) scale(${point.scale})`;
+  section.dataset.introProgress=progress.toFixed(4);
+  section.dataset.windowProgress=windowProgress.toFixed(4);
+  section.dataset.windowPhase=windowProgress>=1?'complete':windowProgress<.65?'drift-right':'return-left';
+ }
+ function schedule(){if(!frame)frame=requestAnimationFrame(paint);}
+ function remeasure(){needsMeasure=true;schedule();}
+ for(const event of ['scroll','portfolio-motion','load','portfolio-loader-complete'])addEventListener(event,schedule,{passive:true});
+ addEventListener('resize',remeasure,{passive:true});
+ reduced.addEventListener('change',remeasure);
+ new ResizeObserver(remeasure).observe(copy);
+ new ResizeObserver(remeasure).observe(viewport);
+ image.addEventListener('load',remeasure);
+ document.fonts?.ready.then(remeasure);
+ paint();
 }
-function schedule(){if(!frame)frame=requestAnimationFrame(paint)}addEventListener('scroll',schedule,{passive:true});addEventListener('portfolio-motion',schedule);addEventListener('resize',schedule);paint();})();

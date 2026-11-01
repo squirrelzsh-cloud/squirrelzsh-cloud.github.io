@@ -1,0 +1,95 @@
+/* An editorial title above the existing live room. Camera and scroll timing stay in studio-opening.js. */
+html body #studio-opening .studio-heading{
+ inset:0 0 auto;height:43%;min-height:0;padding:78px min(6vw,92px) 22px!important;
+ background:#f8f8f0;text-align:left;overflow:hidden;
+}
+html body #studio-opening .home-identity{
+ height:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;
+ grid-template-rows:minmax(0,1fr) auto;gap:12px 32px;
+ align-items:end;align-content:stretch;text-align:left;
+}
+html body #studio-opening .home-identity .home-wordmark{
+ grid-column:1/-1!important;grid-row:1!important;align-self:center;
+ position:static;display:flex;align-items:center;justify-content:center;
+ width:100%;height:100%;margin:0;overflow:visible;
+ font-size:min(24vw,27svh);line-height:.8;letter-spacing:-.035em;
+ color:#46301d;font-weight:700!important;text-shadow:none;
+}
+html body #studio-opening .home-wordmark span{
+ display:block;margin:0;font-family:Lift Condensed,Impact,'Arial Narrow',sans-serif!important;
+ font-size:inherit;line-height:.8;font-weight:700!important;letter-spacing:-.035em;
+ color:inherit;transform:scaleX(1.35);transform-origin:center;
+}
+html body #studio-opening .home-introduction{
+ grid-column:1!important;grid-row:2!important;min-width:0;align-self:end;
+}
+html body #studio-opening .home-role{
+ display:block;margin:0 0 8px;font-size:11px;line-height:1.3;
+ letter-spacing:.23em;font-weight:600!important;color:#88775e;text-align:left;
+}
+html body #studio-opening .home-identity h2{
+ position:static;display:block;width:auto;max-width:none;margin:0;
+ font-size:clamp(15px,1.45vw,23px);line-height:1.55;letter-spacing:.01em;
+ font-weight:400!important;color:#463721;
+}
+html body #studio-opening .home-identity h2 br{display:block}
+html body #studio-opening .home-actions{
+ grid-column:2!important;grid-row:2!important;align-self:end;justify-self:end;
+ position:static;display:flex;flex-wrap:nowrap;align-items:center;
+ gap:12px;margin:0 0 3px;pointer-events:auto;
+}
+html body #studio-opening .home-actions a,
+html body #studio-opening .home-actions button{
+ display:inline-flex;align-items:center;justify-content:space-between;
+ min-height:44px;gap:22px;padding:10px 19px;font-size:14px;line-height:22px;
+ border-radius:24px;cursor:pointer;
+}
+html body #studio-opening .home-actions :is(a,button):focus-visible{
+ outline:2px solid #463721;outline-offset:4px;
+}
+/* The brief transition uses the same lettering as the resting homepage. */
+html body #studio-opening .lift-wordmark{top:78px;left:min(6vw,92px);width:calc(100% - min(12vw,184px));height:calc(43% - 188px);display:flex;align-items:center;justify-content:center}
+html body #studio-opening .lift-wordmark span{font-size:min(24vw,27svh);line-height:.8;transform:scaleX(1.35);color:#46301d}
+@media(max-width:800px){
+ html body #studio-opening .studio-heading{
+  height:max(48svh,350px);padding:82px 20px 24px!important;
+ }
+ html body #studio-opening .home-identity{
+  grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto auto;
+  gap:18px;align-content:stretch;
+ }
+ html body #studio-opening .home-identity .home-wordmark{
+  grid-column:1!important;grid-row:1!important;font-size:29vw;line-height:.8;
+ }
+ html body #studio-opening .home-wordmark span{transform:scaleX(1.05)}
+ html body #studio-opening .home-introduction{grid-column:1!important;grid-row:2!important}
+ html body #studio-opening .home-role{font-size:10px;margin-bottom:7px;letter-spacing:.2em}
+ html body #studio-opening .home-identity h2{font-size:16px;line-height:1.6}
+ html body #studio-opening .home-actions{
+  grid-column:1!important;grid-row:3!important;justify-self:start;margin:0;gap:10px;
+ }
+ html body #studio-opening .home-actions :is(a,button){min-height:44px;font-size:14px;padding:9px 17px;gap:24px}
+ html body #studio-opening .lift-wordmark{top:82px;left:20px;width:calc(100% - 40px);height:calc(max(48svh,350px) - 270px)}
+ html body #studio-opening .lift-wordmark span{font-size:29vw;transform:scaleX(1.05)}
+}
+@media(min-width:801px) and (max-height:740px){
+ html body #studio-opening .studio-heading{padding-top:66px!important;padding-bottom:16px!important}
+ html body #studio-opening .home-identity{gap:8px 24px}
+ html body #studio-opening .home-identity .home-wordmark{font-size:24svh}
+ html body #studio-opening .home-role{font-size:9px;margin-bottom:4px}
+ html body #studio-opening .home-identity h2{font-size:15px;line-height:1.4}
+ html body #studio-opening .home-actions :is(a,button){font-size:13px;padding:9px 16px;min-height:42px}
+ html body #studio-opening .lift-wordmark{top:66px;height:calc(43% - 148px)}
+ html body #studio-opening .lift-wordmark span{font-size:24svh}
+}
+@media(max-height:559px) and (max-width:800px){
+ html body #studio-opening .studio-heading{height:56svh;min-height:0;padding:64px 20px 12px!important}
+ html body #studio-opening .home-identity{grid-template-columns:1fr auto;grid-template-rows:minmax(0,1fr) auto;gap:8px 20px}
+ html body #studio-opening .home-identity .home-wordmark{grid-column:1/-1!important;font-size:22svh}
+ html body #studio-opening .home-wordmark span{transform:scaleX(1.35)}
+ html body #studio-opening .home-introduction{grid-column:1!important;grid-row:2!important}
+ html body #studio-opening .home-role{display:none}
+ html body #studio-opening .home-identity h2{font-size:12px;line-height:1.4}
+ html body #studio-opening .home-actions{grid-column:2!important;grid-row:2!important;gap:8px;justify-self:end}
+ html body #studio-opening .home-actions :is(a,button){font-size:12px;min-height:40px;padding:8px 12px;gap:12px}
+}

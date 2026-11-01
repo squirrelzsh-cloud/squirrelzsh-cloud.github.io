@@ -1,0 +1,147 @@
+/* Feedback adapts the reference hierarchy to the portfolio's paper and ink. */
+html body #reviews.feedback-section {
+  --feedback-paper: var(--portfolio-paper, #f8f8f0);
+  --feedback-ink: var(--portfolio-ink, #463721);
+  --feedback-muted: #86775f;
+  --feedback-surface: #efecdf;
+  padding: 70px 0 74px;
+  color: var(--feedback-ink);
+  background: var(--feedback-paper);
+  scroll-margin-top: 96px;
+}
+html body #reviews .feedback-heading {
+  display: block;
+  text-align: center;
+  padding: 0 20px;
+  margin: 0 0 42px;
+}
+html body #reviews .feedback-heading p {
+  max-width: none;
+  margin: 0;
+}
+html body #reviews .feedback-heading .feedback-eyebrow {
+  margin-bottom: 13px;
+  color: var(--feedback-muted);
+  font-size: 12px;
+  letter-spacing: .1em;
+  line-height: 1.5;
+}
+html body #reviews .feedback-heading h3 {
+  color: var(--feedback-ink);
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.25;
+  margin: 0 0 14px;
+}
+html body #reviews .feedback-subtitle {
+  color: var(--feedback-muted);
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: .015em;
+}
+html body #reviews .feedback-track {
+  --feedback-card-width: clamp(360px, 31vw, 420px);
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+html body #reviews .feedback-group { gap: 20px; }
+html body #reviews .feedback-track::-webkit-scrollbar { display: none; }
+html body #reviews .feedback-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 0 0 var(--feedback-card-width);
+  width: var(--feedback-card-width);
+  height: 292px;
+  min-height: 292px;
+  padding: 23px 28px 26px;
+  background: var(--feedback-surface);
+  color: var(--feedback-ink);
+  border: 0;
+  border-radius: 16px;
+  box-shadow: none;
+  text-align: left;
+  white-space: normal;
+  font-weight: 400 !important;
+  transition: background-color .2s;
+}
+html body #reviews .feedback-card:hover,
+html body #reviews .feedback-card.feedback-selected { background: #e9e4d5; }
+html body #reviews .feedback-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+  margin-bottom: 10px;
+}
+html body #reviews .feedback-quote-mark {
+  color: #b59b68;
+  font-size: 43px;
+  font-weight: 600;
+  line-height: 1;
+  height: 30px;
+}
+html body #reviews .feedback-sample {
+  font-size: 11px;
+  color: var(--feedback-muted);
+  letter-spacing: .07em;
+}
+html body #reviews .feedback-quote {
+  display: block;
+  color: var(--feedback-ink);
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.85;
+  margin: 0;
+  text-wrap: pretty;
+}
+html body #reviews .feedback-person {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+}
+html body #reviews .feedback-avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  background: #e4dfd1;
+  border-radius: 50%;
+  font-size: 19px;
+  line-height: 1;
+}
+html body #reviews .feedback-identity { display: flex; flex-direction: column; min-width: 0; }
+html body #reviews .feedback-role { display: block; color: var(--feedback-ink); font-size: 14px; font-weight: 600; line-height: 1.5; }
+html body #reviews .feedback-company { display: block; font-size: 12px; color: var(--feedback-muted); line-height: 1.5; margin-top: 2px; }
+html body #reviews .feedback-stars { margin-left: auto; padding-left: 8px; color: #b18b35; font-size: 15px; letter-spacing: 1px; white-space: nowrap; }
+html body #reviews .feedback-sample-note { color: var(--feedback-muted); text-align: center; font-size: 12px; line-height: 1.8; margin: 22px 20px 0; }
+@media (max-width: 800px) {
+  html body #reviews.feedback-section { padding: 48px 0 54px; scroll-margin-top: 86px; }
+  html body #reviews .feedback-heading { margin-bottom: 30px; }
+  html body #reviews .feedback-heading h3 { font-size: clamp(26px, 7.6vw, 34px); }
+  html body #reviews .feedback-track { --feedback-card-width: min(82vw, 360px); gap: 14px; }
+  html body #reviews .feedback-group { gap: 14px; }
+  html body #reviews .feedback-card { min-height: 308px; height: 308px; padding: 22px; }
+  html body #reviews .feedback-quote { font-size: 15px; line-height: 1.85; }
+  html body #reviews .feedback-avatar { flex-basis: 36px; width: 36px; height: 36px; font-size: 17px; }
+  html body #reviews .feedback-person { gap: 9px; }
+  html body #reviews .feedback-role { font-size: 12px; }
+  html body #reviews .feedback-company { font-size: 11px; }
+  html body #reviews .feedback-stars { font-size: 12px; letter-spacing: 0; padding-left: 3px; }
+  html body #reviews .feedback-sample-note { font-size: 11px; margin-top: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #reviews .feedback-card { transition: none; }
+}

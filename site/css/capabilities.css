@@ -1,0 +1,64 @@
+/* Five Chinese capability accordions, matching the approved paper preview. */
+html body #capabilities {
+  --cap-paper: var(--portfolio-paper, #f8f8f0);
+  --cap-ink: var(--portfolio-ink, #463721);
+  --cap-muted: #81735f;
+  --cap-surface: #efede4;
+  --cap-open: #e8e3d7;
+  background: var(--cap-paper);
+  color: var(--cap-ink);
+  padding: 72px var(--page-gutter, 6vw) 80px;
+  scroll-margin-top: 82px;
+  min-height: 0;
+  height: auto;
+}
+html body #capabilities, html body #capabilities * { box-sizing: border-box; }
+html body #capabilities .cap-inner { max-width: 1120px; margin: 0 auto; }
+html body #capabilities .cap-heading { text-align: center; margin: 0 auto 42px; }
+html body #capabilities .cap-eyebrow { font-size: 12px; line-height: 1.6; letter-spacing: .08em; color: var(--cap-muted); margin: 0 0 13px; }
+html body #capabilities h2 { color: var(--cap-ink); font-size: clamp(30px, 3.3vw, 44px); line-height: 1.3; letter-spacing: -.04em; margin: 0 0 15px; }
+html body #capabilities .cap-intro { font-size: 14px; line-height: 1.75; color: var(--cap-muted); margin: 0; }
+html body #capabilities .cap-list { display: grid; gap: 16px; }
+html body #capabilities .cap-item { border: 0; border-radius: 20px; background: var(--cap-surface); overflow: hidden; transition: background-color .3s; }
+html body #capabilities .cap-item.is-open { background: var(--cap-open); }
+html body #capabilities .cap-trigger { appearance: none; display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; min-height: 108px; padding: 25px 30px; color: var(--cap-ink); background: transparent; border: 0; border-radius: 0; text-align: left; font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+html body #capabilities .cap-trigger:focus-visible { outline: 2px solid #a28044; outline-offset: -5px; border-radius: 20px; }
+html body #capabilities .cap-label { display: block; min-width: 0; }
+html body #capabilities .cap-title { display: block; font-size: 23px; font-weight: 600; line-height: 1.4; letter-spacing: -.025em; }
+html body #capabilities .cap-subtitle { display: block; color: var(--cap-muted); font-size: 14px; font-weight: 400; line-height: 1.7; margin-top: 6px; text-wrap: pretty; }
+html body #capabilities .cap-toggle { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; background: #fffdf7; color: var(--cap-ink); border-radius: 50%; font-size: 25px; font-weight: 400; line-height: 1; transition: transform .35s cubic-bezier(.22, 1, .36, 1), background-color .3s; }
+html body #capabilities .is-open .cap-toggle { transform: rotate(45deg); background: #ffe386; }
+html body #capabilities .cap-panel { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows .42s cubic-bezier(.22, 1, .36, 1), visibility .42s; }
+html body #capabilities .is-open .cap-panel { grid-template-rows: 1fr; visibility: visible; }
+html body #capabilities .cap-panel-inner { min-height: 0; overflow: hidden; }
+html body #capabilities .cap-copy { padding: 0 102px 30px 30px; opacity: 0; transform: translateY(-5px); transition: opacity .25s, transform .35s; }
+html body #capabilities .is-open .cap-copy { opacity: 1; transform: none; transition-delay: .08s; }
+html body #capabilities .cap-copy h3 { color: var(--cap-muted); font-size: 13px; line-height: 1.6; letter-spacing: .04em; margin: 23px 0 8px; }
+html body #capabilities .cap-copy h3:first-child { margin-top: 0; }
+html body #capabilities .cap-copy p { color: var(--cap-ink); font-size: 16px; line-height: 1.95; margin: 0; overflow-wrap: anywhere; text-wrap: pretty; }
+html body .reference-showcase > .rs-inner > .rs-project-heading { margin-top: 0; }
+@media (hover: hover) {
+  html body #capabilities .cap-item:not(.is-open):hover { background: #eae6dc; }
+  html body #capabilities .cap-trigger:hover .cap-toggle { background: #ffe386; }
+}
+@media (max-width: 800px) {
+  html body #capabilities { padding: 48px var(--page-gutter, 20px) 54px; scroll-margin-top: 74px; }
+  html body #capabilities .cap-heading { margin-bottom: 30px; }
+  html body #capabilities .cap-title { font-size: 20px; }
+  html body #capabilities .cap-trigger { padding: 22px; min-height: 104px; gap: 18px; }
+  html body #capabilities .cap-copy { padding: 0 22px 26px; }
+  html body #capabilities .cap-copy p { font-size: 15px; }
+}
+@media (max-width: 480px) {
+  html body #capabilities .cap-list { gap: 12px; }
+  html body #capabilities .cap-item { border-radius: 16px; }
+  html body #capabilities .cap-trigger { padding: 20px; gap: 15px; }
+  html body #capabilities .cap-title { font-size: clamp(16px, 4.6vw, 18px); }
+  html body #capabilities .cap-subtitle { font-size: 12px; }
+  html body #capabilities .cap-copy { padding: 0 20px 24px; }
+  html body #capabilities .cap-copy p { font-size: 14px; line-height: 1.9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #capabilities .cap-item, html body #capabilities .cap-panel,
+  html body #capabilities .cap-copy, html body #capabilities .cap-toggle { transition: none; }
+}
